@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Presentation av mig själv</h1>
+    <p>Hej!</p>
+    <p>Jag heter Karl Karlsson och går den här kursen.
+    Jag är 43 år och bor med min katt i Malmö. Jag arbetar som frilansande journalist
+     i vanliga fall, men just nu är jag alltså tjänstledig för 
+     att lära mig webbprogrammering.</p>
+     <p>På fritiden åker jag 
+     gärna till något kallt ställe och kör snowboard. Men jag 
+     gillar även att bara hänga med katten och ta det lugnt.</p>
+     <img src="{{ asset('img/me.jpg') }}" width=500px alt="snowborder" >
+{% endblock %}
