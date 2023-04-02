@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReportControllerTwig extends AbstractController
 {
     #[Route("/", name: "me")]
-    public function me(): Response
+    public function myself(): Response
     {
         return $this->render('me.html.twig');
     }
@@ -51,8 +51,7 @@ class ReportControllerTwig extends AbstractController
         ];
 
         $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );        return $response;
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
     }
 }
