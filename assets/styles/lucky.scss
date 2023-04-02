@@ -1,0 +1,17 @@
+.lucky {
+    overflow: hidden;
+    img {
+        margin-top: $magic-number;
+        border: double 8px purple;
+    }
+    h1 {
+        background: purple;
+        color: $font-alternative-color;
+        border-radius: 10px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-block-start:0px;
+        text-align: center;
+    }
+}

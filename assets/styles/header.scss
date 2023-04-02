@@ -1,0 +1,30 @@
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("../../public/img/smiley.jpg");
+    background-color: $background-alternative-color;
+}
+
+/* Title */
+
+.site-title {
+    padding: 2em 2em 2em 1em;
+}
+  
+.nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+    list-style: none;
+}
+
+.nav ul li {
+    padding: 0 1em;
+}
+
+.nav a {
+    color: $font-alternative-color;
+}

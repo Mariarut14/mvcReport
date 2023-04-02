@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+<div class="lucky" style="background-image: url({{asset('img/smiley.jpg')}})">
+    <h1 style="margin-top:1em">My happy-page!</h1>
+    <figure class="center" >
+        <img src="{{ asset('img/laugh'~number~'.jpg') }}" width=400px alt="laugh">
+    </figure>
+</div>
+{% endblock %}

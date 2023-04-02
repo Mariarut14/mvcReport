@@ -14,6 +14,25 @@
         {% endblock %}
     </head>
     <body>
+    <header class="header">
+        <div class="site-title">My Symfony Site</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="{{ path('me') }}">Me</a></li>
+                <li><a href="{{ path('about') }}">About</a></li>
+                <li><a href="{{ path('report') }}">Report</a></li>
+                <li><a href="{{ path('lucky') }}">Lucky</a></li>
+            </ul>
+        </nav>
+    </header>
         {% block body %}{% endblock %}
+    <div class="footer">
+        <div class="copyright">
+            <p>Denna sidan är Copyright &copy; av Mariarut.</p>
+        </div>
+        <div class="">
+            <a href="https://github.com/Mariarut14/mvcReport" title="mitt github-repo" ><img src="{{ asset('img/github.svg') }}" alt="github-ikon"></a>
+        </div>
+    </div>
     </body>
 </html>

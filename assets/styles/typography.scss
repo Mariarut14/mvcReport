@@ -1,0 +1,56 @@
+/* Typografy */
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Mukta:wght@500&display=swap');
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    line-height: $base-line-height;
+    color: $font-color;
+}
+
+p,
+td,
+th,
+li,
+dd {
+    font-size: $base-font-size;
+    margin-bottom: $magic-number;
+    text-align: justify;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 2em;
+    margin-bottom: $magic-number;
+    font-weight: bold;
+    font-family: 'Mukta', sans-serif;
+}
+
+a:link {
+    color: $link-color;
+}
+
+a:hover {
+    color: $link-hover-color;
+}
+
+a:visited {
+    color: $link-visited-color;
+}
+
+.header {
+    color: $font-alternative-color;
+    .site-title {
+        font-size: 2em;
+    }
+}

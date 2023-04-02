@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'typography';
+@import 'figure';
+@import 'header';
+@import 'footer';
+@import 'about';
+@import 'report';
+@import 'lucky';
+
+body {
+    background-color: $background-color;
+    margin: 0px;
+    padding-left: 1em;
+    padding-right: 1em;
+}

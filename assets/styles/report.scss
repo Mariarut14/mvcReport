@@ -1,0 +1,26 @@
+.two-col-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.two-col-layout > .article {
+    width: calc(100% / 16 * 12); /* 12/16 width */
+    padding-left: 2em;
+    
+}
+
+.two-col-layout > .aside {
+    width: calc(100% / 16 * 4); /* 4/16 width */
+}
+.aside {
+    background-color: $background-alternative-color;
+    border-right: 1px solid #ccc;
+    padding-left: 1em;
+    padding-top: 24px;
+    max-width: 200px;
+    a {
+        color: rgb(178, 178, 250);
+    }
+}
