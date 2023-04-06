@@ -15,13 +15,13 @@ class ReportControllerTwig extends AbstractController
         return $this->render('me.html.twig');
     }
 
-    #[Route("/about", name: "about")]     
+    #[Route("/about", name: "about")]
     public function about(): Response
     {
         return $this->render('about.html.twig');
     }
 
-    #[Route("/report", name: "report")]     
+    #[Route("/report", name: "report")]
     public function report(): Response
     {
         return $this->render('report.html.twig');
@@ -35,11 +35,11 @@ class ReportControllerTwig extends AbstractController
             'number' => $number,
         ]);
     }
-    #[Route("/api/quote")]    
+    #[Route("/api/quote")]
     public function quote(): Response
-    {   
-        $quotes = array("It is during our darkest moments that we must focus to see the light. -Aristotle", 
-        "If you really look closely, most overnight successes took a long time. -Steve Jobs", 
+    {
+        $quotes = array("It is during our darkest moments that we must focus to see the light. -Aristotle",
+        "If you really look closely, most overnight successes took a long time. -Steve Jobs",
         "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. -Oprah Winfrey");
 
         $this->quote = $quotes[random_int(0, 2)];
