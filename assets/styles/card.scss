@@ -1,0 +1,23 @@
+.full-deck {
+    display: flex;
+    width: 710px;
+    height: 292px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 2em;
+
+}
+
+.deck-card {
+    display: flex;
+    width: 50px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 60px;
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 2px rgb(119, 119, 119);
+    line-height: 70px;
+    justify-content: center;
+    align-items: center;
+}

@@ -4,7 +4,13 @@
 
 {% block body %}
     <h1 style="margin-top:1em">Play cards!</h1>
-    <p>{{card}}</p>
-
-    <p>{{cardString}}</p>
+    <div class="full-deck">
+    {% for card in cardDeck %}
+        {% if card[6:7] > 52 and card[6:7] < 84 %}
+            <div class="deck-card" style="color: red">{{ card |raw }}</div>
+        {% else %}
+            <div class="deck-card" >{{ card |raw }}</div>
+        {% endif %}
+    {% endfor %}
+    </div>
 {% endblock %}

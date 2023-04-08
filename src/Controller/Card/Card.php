@@ -17,6 +17,12 @@ class Card
         return $this->value;
     }
 
+    
+    public function setValue(int $value)
+    {
+        $this->value = $value;
+    }
+
     public function getValue(): int
     {
         return $this->value;

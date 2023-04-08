@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Card\Card;
+use App\Card\CardGraphic;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,11 +22,15 @@ class CardController extends AbstractController
     #[Route("/card/deck", name: "card_deck")]
     public function allCards(): Response
     {
-        $card = new Card();
+        $cardDeck = [];
+        for ($i = 1; $i <= 52; $i++) {
+            $card = new CardGraphic();
+            $card->setValue($i);
+            $cardDeck[] = $card->getAsString();
+        }
 
         $data = [
-            "card" => $card->draw(),
-            "cardString" => $card->getAsString(),
+            "cardDeck" => $cardDeck,
         ];
         return $this->render('card/deck.html.twig', $data);
     }
