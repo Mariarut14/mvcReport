@@ -1,3 +1,23 @@
+.one-card {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 210px;
+}
+
+.card {
+    display: flex;
+    width: 150px;
+    height: 210px;
+    border-radius: 10px;
+    font-size: 180px;
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 2px rgb(119, 119, 119);
+    line-height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
 .full-deck {
     display: flex;
     width: 710px;

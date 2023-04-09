@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cards{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:1em">Show one card!</h1>
+    <div class="one-card">
+        {% if card[6:7] > 52 and card[6:7] < 84 %}
+            <div class="card" style="color: red">{{ card |raw }}</div>
+        {% else %}
+            <div class="card" >{{ card |raw }}</div>
+        {% endif %}
+    </div>
+    <p>There are {{ card_left }} cards left in the deck.</p>    
+{% endblock %}

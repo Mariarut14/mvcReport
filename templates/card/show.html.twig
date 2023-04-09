@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cards{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:1em">Show cards!</h1>
+    <form method="post" action="">
+    <input type="number" name="num_cards" min="1" max="52" value="1">
+    <input type="submit" name="do_it" value="Start playing">
+</form>
+
+    <p>You wanted to see {{ number}} cards.</p>
+<div class="full-deck">
+    {% for card in hand %}
+        {% if card[6:7] > 52 and card[6:7] < 84 %}
+            <div class="deck-card" style="color: red">{{ card |raw }}</div>
+        {% else %}
+            <div class="deck-card" >{{ card |raw }}</div>
+        {% endif %}
+    {% endfor %}
+    </div>
+    <p>Number of cards left in deck is {{ card_left}}.</p>
+    <a href="{{path('card_draw_init')}}">Spela igen?</a>
+{% endblock %}
