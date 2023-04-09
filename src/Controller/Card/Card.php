@@ -13,7 +13,7 @@ class Card
 
     public function draw(): int
     {
-        $this->value = random_int(1, $this->numberCards);
+        $this->value = random_int(1, 52);
         return $this->value;
     }
 

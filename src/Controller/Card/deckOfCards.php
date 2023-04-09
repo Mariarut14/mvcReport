@@ -13,14 +13,30 @@ class DeckOfCards
         $this->deck;
     } 
 
-    public function makeDeck(): array
+    public function makeDeck(): void
     {
         for ($i = 1; $i <= 52; $i++) {
             $card = new CardGraphic();
             $card->setValue($i);
-            $card = $card->getAsString();
             $this->deck[] = $card;
         }
-        return $this->deck;
+    }
+
+    public function getDeck(): array
+    {
+        $values = [];
+        foreach ($this->deck as $card) {
+            $values[] = $card;
+        }
+        return $values;
+    }
+
+    public function getString(): array
+    {
+        $value=[];
+        foreach ($this->deck as $card ) {
+            $value[] = $card->getAsString();
+        }
+        return $value;
     }
 }

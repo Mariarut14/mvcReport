@@ -42,8 +42,8 @@ class CardController extends AbstractController
         $session->clear();
         $cardDeck = [];
         $cardDeck = new DeckOfCards();
-        $cardDeck = $cardDeck->makeDeck();
-        
+        $cardDeck->makeDeck();
+        $cardDeck = $cardDeck->getString();
         shuffle($cardDeck);
         $data = [
             "cardDeck" => $cardDeck,
@@ -56,73 +56,47 @@ class CardController extends AbstractController
         SessionInterface $session
     ): Response
     {
-        if ($session->get("deck") == null) {
+        if (empty($session->get("deck"))) {
             $cardDeck = [];
             $cardDeck = new DeckOfCards();
-            $cardDeck = $cardDeck->makeDeck();
+            $cardDeck->makeDeck();
+            $cardDeck = $cardDeck->getDeck();
             $session->set("deck", $cardDeck);
-            $session->set("card_left", 52);
         }
+
         $deck = $session->get("deck");
         shuffle($deck);
-        $card = array_splice($deck, 0, 1);
-
+        $card = array_splice($deck, 0, 1)[0];
+        $card=$card->getAsString();
         $cardsLeft = count($deck);
         $session->set("card_left", $cardsLeft);
         $session->set("deck", $deck);
         
         $data = [
             "card_left"=>$cardsLeft,
-            "card"=>$card[0],
+            "card"=>$card,
         ];
 
         return $this->render('card/draw.html.twig', $data);
     }
 
-    /*#[Route("/card/deck/draw", name: "card_draw_post", methods: ['POST'])]
-    public function initDraw(
+    #[Route("/card/deck/draw/{num<\d+>}", name: "card_draw_hand")]
+    public function DrawHand(
+        int $num,
         SessionInterface $session
     ): Response
     {
-        $numCard = 1;
+        $numCard = $num;
 
-        $hand = [];
         $deck = $session->get("deck");
-        $hand = new Hand($deck, $numCard);
+        $hand = new Hand($deck);
+        for ($i=1; $i<=$numCard; $i++) {
+            $hand->add(new cardGraphic);
+        }
+        $deck = $hand->setValue();
+        $hand = $hand->getAsString();
 
-        $hand->draw();
-        array_splice($this->deck, 0, $this->numCard);
-
-        $cardsLeft = length($this->deck);
-        $session->set("card_left", $cardsLeft);
-        $session->set("deck", $deck);
-        
-        $data = [
-            "hand"=>$hand,
-            "number"=>$numCard,
-            "card_left"=>$cardsLeft,
-            "deck"=>$deck
-        ];
-
-        return $this->render('card/showOne.html.twig', $data);
-    }
-
-    #[Route("/card/deck/draw:{numCard<\d+>}", name: "card_draw_post", methods: ['POST'])]
-    public function initDrawCallback(
-        Request $request,
-        SessionInterface $session
-    ): Response
-    {
-        $numCard = $request->request->get('num_cards');
-
-        $hand = [];
-        $deck = $session->get("deck");
-        $hand = new Hand($deck, $numCard);
-
-        $hand->draw();
-        array_splice($this->deck, 0, $this->numCard);
-
-        $cardsLeft = length($this->deck);
+        $cardsLeft = count($deck);
         $session->set("card_left", $cardsLeft);
         $session->set("deck", $deck);
         
@@ -134,5 +108,5 @@ class CardController extends AbstractController
         ];
 
         return $this->render('card/show.html.twig', $data);
-    }*/
+    }
 }
