@@ -4,12 +4,26 @@
 
 {% block body %}
     <h1 style="margin-top:1em">Show one card!</h1>
-    <div class="one-card">
-        {% if card[6:7] > 52 and card[6:7] < 84 %}
-            <div class="card" style="color: red">{{ card |raw }}</div>
-        {% else %}
-            <div class="card" >{{ card |raw }}</div>
-        {% endif %}
+    <div class="two-col-layout">
+        <article class=article>
+            <div class="one-card">
+                {% if card[6:7] > 52 and card[6:7] < 84 %}
+                    <div class="card" style="color: red">{{ card |raw }}</div>
+                {% else %}
+                    <div class="card" >{{ card |raw }}</div>
+                {% endif %}
+            </div>
+            <p>There are {{ card_left }} cards left in the deck.</p>
+        </article>
+
+        <aside class="aside">
+            <ul>
+                <li><a href="{{path ('card_deck') }}">Show deck</a></li>
+                <li><a href="{{path ('card_deck_shuffle') }}">Shuffle deck</a></li>
+                <li><a href="{{path ('card_deck_draw') }}">Draw one card</a></li>
+                <li><a href="{{path ('card_draw_hand', {num: 5}) }}">Draw 5 cards</a></li>
+            </ul> 
+        </aside>
     </div>
-    <p>There are {{ card_left }} cards left in the deck.</p>    
+   
 {% endblock %}

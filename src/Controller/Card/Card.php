@@ -10,13 +10,6 @@ class Card
     {
         $this->value = null;
     }
-
-    public function draw(): int
-    {
-        $this->value = random_int(1, 52);
-        return $this->value;
-    }
-
     
     public function setValue(int $value)
     {

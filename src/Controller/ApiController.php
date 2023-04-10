@@ -7,21 +7,45 @@ use App\Card\CardGraphic;
 use App\Card\DeckOfCards;
 use App\Card\Hand;
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-class CardController extends AbstractController
+class ApiController extends AbstractController
+
 {
-    #[Route("/card", name: "card")]
-    public function home(): Response
+    #[Route("/api", name:"api")]
+    public function api(): Response
     {
-        return $this->render('card/home.html.twig');
+        return $this->render('api/home.html.twig');
     }
 
-    #[Route("/card/deck", name: "card_deck")]
+
+#[Route("/api/quote", name:"quote")]
+    public function quote(): Response
+    {
+        $quotes = array("It is during our darkest moments that we must focus to see the light. -Aristotle",
+        "If you really look closely, most overnight successes took a long time. -Steve Jobs",
+        "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. -Oprah Winfrey");
+
+        $this->quote = $quotes[random_int(0, 2)];
+        $this->now = date("Y-m-d H:i:s");
+        $data = [
+            'message' => 'Welcome to the quote API. Here is your qoute:',
+            'quote' => $this->quote,
+            'now' => $this->now
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
+    }
+
+    #[Route("/api/deck", name: "json_deck") ]
     public function allCards(): Response
     {
         $cardDeck = [];
@@ -32,10 +56,12 @@ class CardController extends AbstractController
         $data = [
             "cardDeck" => $cardDeck
         ];
-        return $this->render('card/deck.html.twig', $data);
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
     }
 
-    #[Route("/card/deck/shuffle", name: "card_deck_shuffle")]
+    #[Route("/api/deck/shuffle", name: "json_shuffle")]
     public function allCardsShuffle(
         SessionInterface $session
     ): Response
@@ -49,10 +75,12 @@ class CardController extends AbstractController
         $data = [
             "cardDeck" => $cardDeck,
         ];
-        return $this->render('card/deck.html.twig', $data);
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
     }
 
-    #[Route("/card/deck/draw", name: "card_deck_draw")]
+    #[Route("/api/deck/draw", name: "json_deck_draw")]
     public function DrawOne(
         SessionInterface $session
     ): Response
@@ -78,24 +106,18 @@ class CardController extends AbstractController
             "card"=>$card,
         ];
 
-        return $this->render('card/draw.html.twig', $data);
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
     }
 
-    #[Route("/card/deck/draw/{num<\d+>}", name: "card_draw_hand")]
+    #[Route("/api/deck/draw/{num<\d+>}", name: "json_draw_hand")]
     public function DrawHand(
         int $num,
         SessionInterface $session
     ): Response
     {
         $numCard = $num;
-
-        if (empty($session->get("deck"))) {
-            $cardDeck = [];
-            $cardDeck = new DeckOfCards();
-            $cardDeck->makeDeck();
-            $cardDeck = $cardDeck->getDeck();
-            $session->set("deck", $cardDeck);
-        }
 
         $deck = $session->get("deck");
         $hand = new Hand($deck);
@@ -115,6 +137,9 @@ class CardController extends AbstractController
             "card_left"=>$cardsLeft,
         ];
 
-        return $this->render('card/show.html.twig', $data);
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
     }
+
 }

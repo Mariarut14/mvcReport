@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}JSon{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:1em">JSON-routes:</h1>
+    <ul>
+        <li><a href="{{path ('quote') }}">Random qoute and current date and time</a></li>
+        <li><a href="{{path ('json_deck') }}">Show a whole deck in order</a></li>
+        <li><a href="{{path ('json_shuffle') }}">Show a shuffled deck</a></li>
+        <li><a href="{{path ('json_deck_draw') }}">
+        Draw one card from the deck and show how many cards there are left</a></li>
+        <li><a href="{{path ('json_draw_hand', {num: 5}) }}">Draw 5 cards from deck 
+        and show how many cards there are left. Change number of cards 
+        by writing another number in url.</a></li>
+    </ul> 
+
+{% endblock %}
