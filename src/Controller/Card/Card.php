@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Card;
 
@@ -10,7 +10,7 @@ class Card
     {
         $this->value = null;
     }
-    
+
     public function setValue(int $value)
     {
         $this->value = $value;

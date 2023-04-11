@@ -38,8 +38,7 @@ class CardController extends AbstractController
     #[Route("/card/deck/shuffle", name: "card_deck_shuffle")]
     public function allCardsShuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
         $cardDeck = [];
         $cardDeck = new DeckOfCards();
@@ -55,8 +54,7 @@ class CardController extends AbstractController
     #[Route("/card/deck/draw", name: "card_deck_draw")]
     public function DrawOne(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         if (empty($session->get("deck"))) {
             $cardDeck = [];
             $cardDeck = new DeckOfCards();
@@ -72,7 +70,7 @@ class CardController extends AbstractController
         $cardsLeft = count($deck);
         $session->set("card_left", $cardsLeft);
         $session->set("deck", $deck);
-        
+
         $data = [
             "card_left"=>$cardsLeft,
             "card"=>$card,
@@ -85,8 +83,7 @@ class CardController extends AbstractController
     public function DrawHand(
         int $num,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $numCard = $num;
 
         if (empty($session->get("deck"))) {
@@ -100,7 +97,7 @@ class CardController extends AbstractController
         $deck = $session->get("deck");
         $hand = new Hand($deck);
         for ($i=1; $i<=$numCard; $i++) {
-            $hand->add(new cardGraphic);
+            $hand->add(new cardGraphic());
         }
         $deck = $hand->setValue();
         $hand = $hand->getAsString();
@@ -108,7 +105,7 @@ class CardController extends AbstractController
         $cardsLeft = count($deck);
         $session->set("card_left", $cardsLeft);
         $session->set("deck", $deck);
-        
+
         $data = [
             "hand"=>$hand,
             "number"=>$numCard,

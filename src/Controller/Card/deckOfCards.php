@@ -11,7 +11,7 @@ class DeckOfCards
     public function __construct()
     {
         $this->deck;
-    } 
+    }
 
     public function makeDeck(): void
     {
@@ -34,7 +34,7 @@ class DeckOfCards
     public function getString(): array
     {
         $value=[];
-        foreach ($this->deck as $card ) {
+        foreach ($this->deck as $card) {
             $value[] = $card->getAsString();
         }
         return $value;

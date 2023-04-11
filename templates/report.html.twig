@@ -36,7 +36,35 @@
         hitta rätt route, eftersom jag inte tyckte att den stod någonstans. Till sist förstod 
         jag att den måste läsa av kommentaren, vilket blev en aha-upplevelse.</p>
         <h2 id="kmom02">kmom02</h2> 
-        <p></p>
+        <p>När jag skapar en klass som är ett arv så kan den klassen 
+        använda alla metoder och variabler som finns i "parent-class", men den kan även 
+        lägga till nya metoder och variabler så att det blir en specialiserad form av "parent-class". 
+        I en composition-class används flera objekt från en annan klass för att skapa en 
+        ny klass. T.ex. compositionen "bibliotek" består av flera objekt från klassen "bok". 
+        Ett interface är klass med en samling metoder. Om en klass ska kunna implementera ett interface 
+        måste den innehålla alla metoder som finns i interfacet. Ett interface innehåller inte 
+        variabler. Ett trait är en klass som också endast innehåller metoder. En klass kan sedan "ärva" 
+        metoder från flera olika traits och är alltså inte begränsade till endast en klass, 
+        till skillnad från när det är en arvs-klass.</p>
+        <p>Jag hade svårt att komma igång med uppgiften och att få ett bra 
+        upplägg på compositionsklasserna. Det var utmanande att få till delen där antalet kort skulle minska
+        och att det inte gick att bara dra slumpmässigt från en kortlek. Till skillnad från tärningsspelet fick 
+        det ju inte vara samma kort två gånger. Jag kom ändå på ganska snabbt hur jag kunde använda session 
+        för att spara kortleken i. Jag löste det till sist genom att ha kortleken som variabel i hand-klassen 
+        ,för då kunde jag lägga in en "decimerad" kortlek som parameter och dra från den. Ett misstag jag 
+        gjorde i början var att jag omvandlade kortleken till sträng direkt och sparade i session. När jag 
+        sedan skulle använda den så fungerade inte metoderna eftersom de byggde på objekt i int-format. </p>
+        <p>Det som jag skulle kunna utveckla är bl.a. att jag inte använt något formulär, och 
+        alltså inte get/post. Eftersom uppgifterna gick att lösa ändå och det tog mycket tid så kände jag 
+        att jag inte hade tid att fixa med det. Det känns även som att jag har mycket kod i själva 
+        controllern och att det antagligen skulle kunna minskas ned med bättre/fler metoder i klasserna.</p>
+        <p>Jag jobbade inte så mycket med modellering, utan gjorde UML-diagrammet i efterhand. 
+        Det är nog bra att fundera mer innan, men jag kände att jag inte förstått helt hur man skulle tänka 
+        med klasserna och då var det lättare att bara köra igång och lära sig allt eftersom. Nästa gång 
+        kommer det vara lättare att göra en modell innan. </p>
+        <p>Min TIL för kmom02 är nog när jag insåg att när jag skapar en instans av en klass så är det ett 
+        objekt som har vissa egenskaper som t.ex. att det har en viss typ. Så fort jag ändrat en egenskap,
+         till exempel gjort en array eller string av det så funkar inte objektet som det gjorde tidigare. </p>
         <h2 id="kmom03">kmom03</h2> 
         <p></p>
         <h2 id="kmom04">kmom04</h2> 

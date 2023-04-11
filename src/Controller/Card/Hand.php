@@ -4,7 +4,6 @@ namespace App\Card;
 
 use App\Card\CardGraphic;
 
-
 class Hand
 {
     private $hand = [];
@@ -13,12 +12,12 @@ class Hand
     {
         $this->deck = $deck;
     }
-    
+
     public function add(Cardgraphic $card)
     {
         $this->hand[] = $card;
     }
-        
+
     public function setValue(): array
     {
         foreach ($this->hand as $card) {
@@ -45,6 +44,6 @@ class Hand
         foreach ($this->hand as $card) {
             $values[] = $card->getAsString();
         }
-        return $values;   
+        return $values;
     }
 }
