@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cards{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:1em">Cards!</h1>
+        <article class=article>
+            <form method="post" action="">
+                <input type="submit" name="do_it" value="Start playing">
+            </form>
+
+            
+            <figure class="center" >
+                <img src="{{ asset('img/aces.jpg') }}" width=400px alt="aces">
+            </figure>
+        </article>
+
+{% endblock %}

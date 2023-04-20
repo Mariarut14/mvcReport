@@ -97,7 +97,13 @@
             "@auto-scripts"
         ],
         "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests",
-        "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests --dry-run -v"
+        "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests --dry-run -v",
+        "phpmd": "tools/phpmd/vendor/bin/phpmd  --config=phpmd.xml || true . text phpmd.xml ",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan || true --config=phpstan.neon analyse -l 5",
+        "lint": [
+            "@phpmd",
+            "@phpstan"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -107,5 +113,5 @@
             "allow-contrib": false,
             "require": "6.1.*"
         }
-    }
+    } 
 }

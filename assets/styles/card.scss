@@ -28,6 +28,27 @@
 
 }
 
+.hand-deck {
+    display: flex;
+    width: 500px;
+    justify-content:space-around;
+    gap: 10px;
+    padding: 2em;
+}
+
+.hand-card {
+    display: flex;
+    width: 75px;
+    height: 105px;
+    border-radius: 8px;
+    font-size: 90px;
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 2px rgb(119, 119, 119);
+    line-height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
 .deck-card {
     display: flex;
     width: 50px;
@@ -39,4 +60,27 @@
     line-height: 70px;
     justify-content: center;
     align-items: center;
+}
+.flash-win {
+    padding: 0.5em;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.flash-lose {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.flash-lose:before {
+    content: "⚠";
+}
+
+.flash-lose {
+    padding: 0.5em;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }

@@ -17,7 +17,7 @@ class CardGraphic extends Card
 
     public function getAsString(): string
     {
-        $this->representation = ($this->representation . $this->number[$this->value - 1]);
-        return $this->representation;
+        $cardString = ($this->representation . $this->number[$this->value - 1]);
+        return $cardString;
     }
 }
