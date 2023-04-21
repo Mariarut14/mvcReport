@@ -87,7 +87,7 @@ class Hand
             }
         }
         $propNotBust = $numLowCards / count($this->deck);
-        return round($propNotBust, 2) * 100;
+        return 100 - round($propNotBust, 2) * 100;
     }
 
 
@@ -108,7 +108,7 @@ class Hand
         $sum = $this->sum();
         $propability = $this->propability();
         $deck = $this->deck;
-        while ($sum < 17 | $propability > 50) {
+        while ($sum < 17 | $propability < 50) {
             $deck = $this->newCardInPlay($deck);
             $sum = $this->sum();
             $propability = $this->propability();       

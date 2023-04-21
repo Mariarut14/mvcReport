@@ -3,16 +3,35 @@
 {% block title %}Cards{% endblock %}
 
 {% block body %}
-    <h1 style="margin-top:1em">Cards!</h1>
+    <div class="two-col-layout">
         <article class=article>
+
+            <h1 style="margin-top:1em">Play 21 cards-game!</h1>
+            <p>The player gets two cards. He/she can choose to stand or take
+            another card. The sum of the values should be as close to 21 as 
+            possible. If the sum is more than 21 the player is "bust" and looses.
+            The ace can have the value of 1 or 11 and the knight,queen and king 
+            have the value 10. The player can see the probability to get "bust".</p>
+            <p>When the player stands the bank makes it's draw. If the sum is less than 
+            16 or the propability to not get bust is more than 50% the bank takes 
+            another card. The bank wins if it has less than 22 and higher/same sum than the 
+            player.</p>
+            <p>As long as you choose "new round" the same deck will be used, and there
+            will be less and less cards in the deck. If the player chooses "start again" 
+            a new game will be started.</p>
+
             <form method="post" action="">
                 <input type="submit" name="do_it" value="Start playing">
             </form>
 
-            
-            <figure class="center" >
-                <img src="{{ asset('img/aces.jpg') }}" width=400px alt="aces">
-            </figure>
         </article>
+    <aside class="card-image">
+        
+        <figure class="center" >
+            <img src="{{ asset('img/aces.jpg') }}" width=400px alt="aces">
+        </figure>
+    </aside>
+        </div>
+   
 
 {% endblock %}

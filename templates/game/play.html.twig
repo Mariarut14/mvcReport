@@ -3,29 +3,30 @@
 {% block title %}Cards{% endblock %}
 
 {% block body %}
-    <h1 style="margin-top:1em">Play 21 card-game!</h1>
-        <article class=article>
-            <div class="hand-deck" style="background-image: url({{ asset('img/green-mat.jpg') }})">
-                {% for card in hand %}
-                    {% if card[6:7] > 52 and card[6:7] < 84 %}
-                        <div class="hand-card" style="color: red">{{ card |raw }}</div>
-                    {% else %}
-                        <div class="hand-card" >{{ card |raw }}</div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-                {% if  gameOver and player < 22 and player != 0 %}
-                    <p>The bank got {{sum}} and you got {{player}}.
-                    <p>You've won {{wonPlayer}} times and the bank have won {{ wonBank}} times. </p>
-                {% elseif  gameOver and player == 0 %}
-                    <p>You've won {{wonPlayer}} times and the bank have won {{ wonBank}} times. </p>
-                {% elseif  gameOver and player > 21 %}
-                    <p>Your sum is {{sum}}. Please start a new round.</p>
+    <article class=article>
+        <h1 style="margin-top:1em">Play 21 card-game!</h1>
+        <div class="hand-deck" style="background-image: url({{ asset('img/green-mat.jpg') }})">
+            {% for card in hand %}
+                {% if card[6:7] > 52 and card[6:7] < 84 %}
+                    <div class="hand-card" style="color: red">{{ card |raw }}</div>
                 {% else %}
-                    <p>Your sum is {{sum}}</p>
-                    <p> The propability to not get bust is {{propability}} %.</p>
+                    <div class="hand-card" >{{ card |raw }}</div>
                 {% endif %}
-        </article>
+            {% endfor %}
+        </div>
+
+        {% if  gameOver and player < 22 and player != 0 %}
+            <p>The bank got {{sum}} and you got {{player}}.
+            <p>You've won {{wonPlayer}} times and the bank have won {{ wonBank}} times. </p>
+        {% elseif  gameOver and player == 0 %}
+            <p>You've won {{wonPlayer}} times and the bank have won {{ wonBank}} times. </p>
+        {% elseif  gameOver and player > 21 %}
+            <p>Your sum is {{sum}}. Please start a new round.</p>
+        {% else %}
+            <p>Your sum is {{sum}}</p>
+            <p> The propability to get bust is {{propability}} %.</p>
+        {% endif %}
+        
         <form method="post" action="">
             <p>
             <input type="submit" name="another_card" value="Another card?"
@@ -44,6 +45,8 @@
             >
             </p>
         </form>
+    </article>
+
 {{ include('game/flash.html.twig') }}
    
 {% endblock %}

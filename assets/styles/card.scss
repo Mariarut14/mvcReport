@@ -34,6 +34,8 @@
     justify-content:space-around;
     gap: 10px;
     padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hand-card {
@@ -83,4 +85,26 @@
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+
+input[type=submit] {
+    background-color: $background-alternative-color;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: rgb(62, 62, 62) 3px 3px;
+}
+
+.card-image {
+    border-right: 1px solid #ccc;
+    padding-left: 3em;
+    padding-top: 24px;
+    max-width: 400px;
+    img {
+        border-radius: 10px;
+    }
 }

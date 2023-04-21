@@ -136,7 +136,7 @@ class GameController extends AbstractController
         $deck = $hand->setValue();
         $deck = $hand->bankPlay();
         $sum = $hand->sum();
-        if ($sum > 21 ) {
+        if  ($sum > 21 ) {
             $this->addFlash(
                 'win',
                 'The bank got more than 21 and you won the round!'
