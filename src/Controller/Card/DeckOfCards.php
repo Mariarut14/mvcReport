@@ -1,45 +1,42 @@
 <?php
 
-namespace App\Dice;
+namespace App\Card;
 
-use App\Dice\Dice1;
+use App\Card\CardGraphic;
 
-class DiceHand
+class DeckOfCards
 {
-    private $hand = [];
+    protected array $deck;
 
-    public function add(Dice1 $die): void
+    public function __construct()
     {
-        $this->hand[] = $die;
+        $this->deck = [];
     }
 
-    public function roll(): void
+    public function makeDeck(): void
     {
-        foreach ($this->hand as $die) {
-            $die->roll();
+        for ($i = 1; $i <= 52; $i++) {
+            $card = new CardGraphic();
+            $card->setValue($i);
+            $this->deck[] = $card;
         }
     }
 
-    public function getNumberDices(): int
-    {
-        return count($this->hand);
-    }
-
-    public function getValues(): array
+    public function getDeck(): array
     {
         $values = [];
-        foreach ($this->hand as $die) {
-            $values[] = $die->getValue();
+        foreach ($this->deck as $card) {
+            $values[] = $card;
         }
         return $values;
     }
 
     public function getString(): array
     {
-        $values = [];
-        foreach ($this->hand as $die) {
-            $values[] = $die->getAsString();
+        $value=[];
+        foreach ($this->deck as $card) {
+            $value[] = $card->getAsString();
         }
-        return $values;
+        return $value;
     }
 }

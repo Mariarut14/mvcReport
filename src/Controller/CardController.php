@@ -52,7 +52,7 @@ class CardController extends AbstractController
     }
 
     #[Route("/card/deck/draw", name: "card_deck_draw")]
-    public function DrawOne(
+    public function drawOne(
         SessionInterface $session
     ): Response {
         if (empty($session->get("deck"))) {
@@ -80,7 +80,7 @@ class CardController extends AbstractController
     }
 
     #[Route("/card/deck/draw/{num<\d+>}", name: "card_draw_hand")]
-    public function DrawHand(
+    public function drawHand(
         int $num,
         SessionInterface $session
     ): Response {

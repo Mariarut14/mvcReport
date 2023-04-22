@@ -19,8 +19,7 @@ class GameController extends AbstractController
     #[Route("/game", name: "game_init_get", methods: ['GET'])]
     public function initGame(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
         return $this->render('game/home.html.twig');
     }
@@ -28,8 +27,7 @@ class GameController extends AbstractController
     #[Route("/game", name: "game_init_post", methods: ['POST'])]
     public function initGameCallback(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $cardDeck = new DeckOfCards();
         $cardDeck->makeDeck();
         $cardDeck = $cardDeck->getDeck();
@@ -46,8 +44,7 @@ class GameController extends AbstractController
     #[Route("/game/play", name: "game_play_get", methods: ['GET'])]
     public function playGame(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         if (count($deck) <= 10) {
             $this->addFlash(
@@ -60,38 +57,37 @@ class GameController extends AbstractController
                 "player"=>0,
                 "wonPlayer"=>$session->get("wonPlayer"),
                 "wonBank"=>$session->get("wonBank"),
-                "gameOver"=>True,
+                "gameOver"=>true,
             ];
-            return $this->render('game/play.html.twig', $data);
 
         } else {
-        $hand = new Hand($deck);
-        for ($i = 1; $i <=2; $i++) {
-            $hand->add(new CardGraphic);
+            $hand = new Hand($deck);
+            for ($i = 1; $i <=2; $i++) {
+                $hand->add(new CardGraphic());
+            }
+            $deck = $hand->setValue();
+            $sum = $hand->sum();
+            $propability = $hand->propability();
+            $session->set("deck", $deck);
+            $session->set("hand", $hand);
+            $session->set("player", $sum);
+            $hand = $hand->getAsString();
+            $data = [
+                "hand"=>$hand,
+                "propability"=>$propability,
+                "sum"=>$sum,
+                "gameOver"=>false
+            ];
         }
-        $deck = $hand->setValue();
-        $sum = $hand->sum();
-        $propability = $hand->propability();
-        $session->set("deck", $deck);
-        $session->set("hand", $hand);
-        $session->set("player", $sum);
-        $hand = $hand->getAsString();
-        $data = [
-            "hand"=>$hand,
-            "propability"=>$propability,
-            "sum"=>$sum,
-            "gameOver"=>False
-        ];
         return $this->render('game/play.html.twig', $data);
-        }
+
     }
 
     #[Route("/game/play", name: "game_play_post", methods: ['POST'])]
     public function newCard(
         SessionInterface $session
-    ): Response
-    {
-        $gameOver = False;
+    ): Response {
+        $gameOver = false;
         $deck = $session->get("deck");
         $hand = $session->get("hand");
         $deck = $hand->newCardInPlay($deck);
@@ -102,7 +98,7 @@ class GameController extends AbstractController
                 'You got more than 21 and you lost the round!'
             );
             $session->set("wonBank", $session->get("wonBank") + 1);
-            $gameOver = True;
+            $gameOver = true;
         }
         $propability = $hand->propability();
         $session->set("deck", $deck);
@@ -118,7 +114,7 @@ class GameController extends AbstractController
             "gameOver"=>$gameOver,
             "player"=>$session->get("player")
         ];
-    
+
         return $this->render('game/play.html.twig', $data);
 
     }
@@ -126,17 +122,16 @@ class GameController extends AbstractController
     #[Route("/game/play/bank", name: "game_play_bank", methods: ['POST'])]
     public function playBank(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get("deck");
         $hand = new Hand($deck);
         for ($i = 1; $i <=2; $i++) {
-            $hand->add(new CardGraphic);
+            $hand->add(new CardGraphic());
         }
         $deck = $hand->setValue();
         $deck = $hand->bankPlay();
         $sum = $hand->sum();
-        if  ($sum > 21 ) {
+        if  ($sum > 21) {
             $this->addFlash(
                 'win',
                 'The bank got more than 21 and you won the round!'
@@ -165,7 +160,7 @@ class GameController extends AbstractController
             "player"=>$session->get("player"),
             "wonPlayer"=>$session->get("wonPlayer"),
             "wonBank"=>$session->get("wonBank"),
-            "gameOver"=>True
+            "gameOver"=>true
         ];
 
         return $this->render('game/play.html.twig', $data);

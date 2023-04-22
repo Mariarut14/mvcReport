@@ -25,18 +25,19 @@ class ApiController extends AbstractController
 
 
 #[Route("/api/quote", name:"quote")]
+
     public function quote(): Response
     {
         $quotes = array("It is during our darkest moments that we must focus to see the light. -Aristotle",
         "If you really look closely, most overnight successes took a long time. -Steve Jobs",
         "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. -Oprah Winfrey");
 
-        $this->quote = $quotes[random_int(0, 2)];
-        $this->now = date("Y-m-d H:i:s");
+        $quote = $quotes[random_int(0, 2)];
+        $now = date("Y-m-d H:i:s");
         $data = [
             'message' => 'Welcome to the quote API. Here is your qoute:',
-            'quote' => $this->quote,
-            'now' => $this->now
+            'quote' => $quote,
+            'now' => $now
         ];
 
         $response = new JsonResponse($data);
@@ -79,7 +80,7 @@ class ApiController extends AbstractController
     }
 
     #[Route("/api/deck/draw", name: "json_deck_draw")]
-    public function DrawOne(
+    public function drawOne(
         SessionInterface $session
     ): Response {
         if (empty($session->get("deck"))) {
@@ -109,7 +110,7 @@ class ApiController extends AbstractController
     }
 
     #[Route("/api/deck/draw/{num<\d+>}", name: "json_draw_hand")]
-    public function DrawHand(
+    public function drawHand(
         int $num,
         SessionInterface $session
     ): Response {

@@ -6,14 +6,15 @@ use App\Card\CardGraphic;
 
 class Hand
 {
-    private $hand = [];
+    private array $hand = [];
+    private array $deck = [];
 
     public function __construct(array $deck)
     {
         $this->deck = $deck;
     }
 
-    public function add(CardGraphic $card)
+    public function add(CardGraphic $card): void
     {
         $this->hand[] = $card;
     }
@@ -50,21 +51,20 @@ class Hand
     public function sum(): int
     {
         $sum = 0;
-        $isOne = False;
+        $isOne = false;
         $values = [];
         $values = $this->getValue();
         foreach ($values as $card) {
-            if ($card % 13 == 0 | $card % 13 >10 ) {
+            $card = $card % 13;
+            if ($card % 13 == 0 | $card % 13 >10) {
                 $card = 10;
             } elseif ($card % 13 == 1) {
-                $isOne = True;
+                $isOne = true;
                 $card = 11;
-            } else {
-                $card = $card % 13;
             }
             $sum += $card;
         }
-        If ($sum > 21 && $isOne) {
+        if ($sum > 21 && $isOne) {
             $sum -= 10;
         }
         return $sum;
@@ -77,10 +77,9 @@ class Hand
         $numLowCards = 0;
         foreach ($this->deck as $card) {
             $number = $card->getValue();
-            if ($number % 13 == 0 | $number % 13 > 10 ) {
+            $number = $number % 13;
+            if ($number % 13 == 0 | $number % 13 > 10) {
                 $number = 10;
-            } else {
-                $number = $number % 13;
             }
             if ($number <= $wantedNumber) {
                 $numLowCards ++;
@@ -93,7 +92,7 @@ class Hand
 
     public function newCardInPlay($deck): array
     {
-        $card = new CardGraphic;
+        $card = new CardGraphic();
         shuffle($deck);
         $value=array_splice($deck, 0, 1);
         $card = $value[0];
@@ -104,14 +103,13 @@ class Hand
 
     public function bankPlay(): array
     {
-        $bankPlay = False;
         $sum = $this->sum();
         $propability = $this->propability();
         $deck = $this->deck;
         while ($sum < 17 | $propability < 50) {
             $deck = $this->newCardInPlay($deck);
             $sum = $this->sum();
-            $propability = $this->propability();       
+            $propability = $this->propability();
         }
         return $deck;
     }

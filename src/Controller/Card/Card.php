@@ -4,14 +4,14 @@ namespace App\Card;
 
 class Card
 {
-    protected $value;
+    protected int $value;
 
     public function __construct()
     {
-        $this->value = null;
+        $this->value = 0;
     }
 
-    public function setValue(int $value)
+    public function setValue(int $value): void
     {
         $this->value = $value;
     }
@@ -23,14 +23,14 @@ class Card
 
     public function getAsString(): string
     {
+        $string = ("spader" . ($this->value %13));
         if ($this->value <= 13) {
-            return ("hjärter" . $this->value);
+            $string = ("hjärter" . $this->value);
         } elseif ($this->value <=26) {
-            return ("ruter" . ($this->value %13));
+            $string = ("ruter" . ($this->value %13));
         } elseif ($this->value <=39) {
-            return ("klöver" . ($this->value %13));
-        } else {
-            return ("spader" . ($this->value %13));
+            $string = ("klöver" . ($this->value %13));
         }
+        return $string;
     }
 }
