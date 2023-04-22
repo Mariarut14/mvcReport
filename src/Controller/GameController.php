@@ -160,6 +160,7 @@ class GameController extends AbstractController
 
         }
         $session->set("deck", $deck);
+        $session->set("bank", $sum);
         $handAsString = $hand->getAsString();
         $data = [
             "hand"=>$handAsString,

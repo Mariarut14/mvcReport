@@ -146,8 +146,10 @@ class ApiController extends AbstractController
         $player = $session->get("wonPlayer") ?? 0;
         $bank = $session->get("wonBank") ?? 0;
         $data = [
-            "Number of games won by player: "=>$player,
-            "Number of games won by bank: "=>$bank
+            "Players current points: "=>$session->get("player"),
+            "Banks current points:"=>$session->get("bank"),
+            "Number of games won by player: "=>$session->get("wonPlayer"),
+            "Number of games won by bank: "=>$session->get("wonBank")
         ];
         $response = new JsonResponse($data);
         $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
