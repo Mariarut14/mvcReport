@@ -6,7 +6,7 @@ use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\DeckOfCards;
 use App\Card\Hand;
-//use App\Card\Game;
+use App\Card\HandGame;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +16,13 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class GameController extends AbstractController
 {
+    #[Route("/game/doc", name: "game_doc")]
+    public function getDoc(): Response
+    {
+        return $this->render('game/doc.html.twig');
+    }
+
+
     #[Route("/game", name: "game_init_get", methods: ['GET'])]
     public function initGame(
         SessionInterface $session
@@ -61,7 +68,7 @@ class GameController extends AbstractController
             ];
 
         } else {
-            $hand = new Hand($deck);
+            $hand = new HandGame($deck);
             for ($i = 1; $i <=2; $i++) {
                 $hand->add(new CardGraphic());
             }
@@ -124,7 +131,7 @@ class GameController extends AbstractController
         SessionInterface $session
     ): Response {
         $deck = $session->get("deck");
-        $hand = new Hand($deck);
+        $hand = new HandGame($deck);
         for ($i = 1; $i <=2; $i++) {
             $hand->add(new CardGraphic());
         }
@@ -165,5 +172,4 @@ class GameController extends AbstractController
 
         return $this->render('game/play.html.twig', $data);
     }
-
 }

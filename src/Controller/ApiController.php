@@ -139,4 +139,18 @@ class ApiController extends AbstractController
         return $response;
     }
 
+    #[Route("/api/game", name: "json_game_standing")]
+    public function gameStand(
+        SessionInterface $session
+    ): Response {
+        $player = $session->get("wonPlayer") ?? 0;
+        $bank = $session->get("wonBank") ?? 0;
+        $data = [
+            "Number of games won by player: "=>$player,
+            "Number of games won by bank: "=>$bank
+        ];
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
+        return $response;
+    }
 }

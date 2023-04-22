@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Doc{% endblock %}
+
+{% block body %}
+<article class="article">
+    <h1>Documentation about the game</h1>
+    <h5>Flowchart for card game 21</h5>
+    <img src="{{ asset('img/play_21.drawio.png') }}" width=500px alt="flowchart" >
+    <h5>Pseudocode for function "sum":</h5>
+    <p>Declare variable "aces" is false.<br>
+    For every card in hand:<br><br>
+    Card-value/13 is value.<br>
+    If card-value/13 get remainder 0  value is 11 and variable "aces" is true.<br>
+    If card-value/13 get remainder 11-13  value is 10.<br>
+    Add value to sum.</p>
+    <p>If value is more than 21 and variable "aces" is true: take away 10 from sum.<br>
+    If value is more than 21 player loses.<br>
+    Return sum</p>
+    <h5>Classes used in game:</h5>
+    <p>Card - creates a card.</p>
+    <p>Card-Graphic - creates a graphic presentation of the card. (Inheritance of Card)</p>
+    <p>DeckOfCards - creates a whole deck of graphic-cards. (Composition of CardGraphic)</p>
+    <p>Hand - creates a hand of graphic-cards and methods to get/set values and get value as string.(Composition of CardGraphic.)</p>
+    <p>HandGame - methods used on the Hand in the game. (Inheritance of Hand)</p>
+</article>
+{% endblock %}

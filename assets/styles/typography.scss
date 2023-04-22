@@ -26,11 +26,16 @@ dd {
 
 h1,
 h2,
-h3,
+h3 {
+    font-size: 2em;
+    margin-bottom: $magic-number;
+    font-weight: bold;
+    font-family: 'Mukta', sans-serif;
+}
 h4,
 h5,
 h6 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: $magic-number;
     font-weight: bold;
     font-family: 'Mukta', sans-serif;
