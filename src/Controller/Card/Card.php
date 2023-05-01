@@ -3,13 +3,13 @@
 /**
  * This file is about class Card.
  * The class constructs a playing card.
- * 
+ *
  * (c) Maria Ståhlbom
  */
- 
+
 namespace App\Card;
 
-/** 
+/**
  * Methods:
  *  *__construct
  *  *setValue
@@ -33,7 +33,7 @@ class Card
 
     /**
      * Sets value on Card
-     * 
+     *
      * @param int $value    Value on card.
      */
     public function setValue(int $value): void
@@ -43,7 +43,7 @@ class Card
 
     /**
      * Returns value on card.
-     * 
+     *
      * @return int $value   Value on card.
      */
     public function getValue(): int
@@ -54,7 +54,7 @@ class Card
     /**
      * Converts value on card to string-version of card.
      * Value is the "color" + number between 1-13.
-     * 
+     *
      * @return string $string   Value of card as string.
      */
     public function getAsString(): string

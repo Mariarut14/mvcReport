@@ -105,7 +105,7 @@
             "@phpstan",
             "@csfix"
         ],
-        "phpdoc": "tools/phpdoc/phpdoc",
+        "phpdoc": "tools/phpdoc/phpdoc --config=phpdocs.xml",
         "phpunit": "XDEBUG_MODE=coverage  vendor/bin/phpunit"
 
     },

@@ -43,27 +43,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
             "url": "classes/App-Card-Card.html"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructs\u0020Card.",
             "url": "classes/App-Card-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AsetValue\u0028\u0029",
             "name": "setValue",
-            "summary": "",
+            "summary": "Sets\u0020value\u0020on\u0020Card",
             "url": "classes/App-Card-Card.html#method_setValue"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "Returns\u0020value\u0020on\u0020card.",
             "url": "classes/App-Card-Card.html#method_getValue"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Converts\u0020value\u0020on\u0020card\u0020to\u0020string\u002Dversion\u0020of\u0020card.",
             "url": "classes/App-Card-Card.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A\u0024value",
@@ -73,17 +73,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "",
+            "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002AgetAsString",
             "url": "classes/App-Card-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructs\u0020Card.",
             "url": "classes/App-Card-CardGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Converts\u0020value\u0020on\u0020card\u0020to\u0020a\u0020graphic\u0020string\u002Dversion\u0020of\u0020card.",
             "url": "classes/App-Card-CardGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A\u0024representation",
@@ -128,7 +128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Hand",
             "name": "Hand",
-            "summary": "",
+            "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002Aadd\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
             "url": "classes/App-Card-Hand.html"
         },                {
             "fqsen": "\\App\\Card\\Hand\u003A\u003A__construct\u0028\u0029",
@@ -138,22 +138,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Hand\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Adds\u0020CardGraphic\u0020to\u0020hand",
             "url": "classes/App-Card-Hand.html#method_add"
         },                {
             "fqsen": "\\App\\Card\\Hand\u003A\u003AsetValue\u0028\u0029",
             "name": "setValue",
-            "summary": "",
+            "summary": "Takes\u0020card\u0020from\u0020deck\u0020and\u0020sets\u0020their\u0020value\u0020on\u0020cards\u0020in\u0020hand.",
             "url": "classes/App-Card-Hand.html#method_setValue"
         },                {
             "fqsen": "\\App\\Card\\Hand\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "Get\u0020values\u0020from\u0020hand\u0020in\u0020an\u0020array.",
             "url": "classes/App-Card-Hand.html#method_getValue"
         },                {
             "fqsen": "\\App\\Card\\Hand\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Return\u0020an\u0020array\u0020of\u0020cards\u0020in\u0020a\u0020graphic\u0020form\u0020of\u0020string.",
             "url": "classes/App-Card-Hand.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\Hand\u003A\u003A\u0024hand",
@@ -168,7 +168,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\HandGame",
             "name": "HandGame",
-            "summary": "",
+            "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002Aadd\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
             "url": "classes/App-Card-HandGame.html"
         },                {
             "fqsen": "\\App\\Card\\HandGame\u003A\u003Asum\u0028\u0029",

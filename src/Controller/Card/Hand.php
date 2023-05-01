@@ -1,8 +1,25 @@
 <?php
 
+/**
+ * This file is about class Hand,
+ * a composition of class CardGraphic.
+ * The class constructs a hand of playing card.
+ *
+ * (c) Maria Ståhlbom
+ */
+
 namespace App\Card;
 
 use App\Card\CardGraphic;
+
+/**
+ * Methods:
+ *  *__construct
+ *  *add
+ *  *setValue
+ *  *getValue
+ *  *getAsString
+*/
 
 class Hand
 {
@@ -25,12 +42,20 @@ class Hand
         $this->deck = $deck;
     }
 
+    /**
+     * Adds CardGraphic to hand
+     *
+     * @param $card
+     */
     public function add(CardGraphic $card): void
     {
         $this->hand[] = $card;
     }
 
     /**
+    * Takes card from deck and sets their value on cards in hand.
+    * Returns deck without the taken cards.
+    *
     * @return array<CardGraphic> $this->deck
     */
     public function setValue(): array
@@ -45,6 +70,8 @@ class Hand
     }
 
     /**
+    * Get values from hand in an array.
+    *
     * @return array<int> $values
     */
     public function getValue(): array
@@ -57,6 +84,8 @@ class Hand
     }
 
     /**
+    * Return an array of cards in a graphic form of string.
+    *
     * @return array<string> $values
     */
     public function getAsString(): array

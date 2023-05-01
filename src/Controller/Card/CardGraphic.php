@@ -1,10 +1,27 @@
 <?php
 
+/**
+ * This file is about class CardGraphic,
+ * that extends class Card.
+ * The class constructs a graphic form of playing card.
+ *
+ * (c) Maria Ståhlbom
+ */
+
 namespace App\Card;
+
+/**
+ * Methods:
+ *  *__construct
+ *  *getAsString
+*/
 
 class CardGraphic extends Card
 {
-    protected string $representation = '&#1271';
+    /**
+     * @var string
+    */
+    protected $representation = '&#1271';
 
     /**
     * @var array<int> $number
@@ -18,6 +35,14 @@ class CardGraphic extends Card
     {
         parent::__construct();
     }
+
+    /**
+     * Converts value on card to a graphic string-version of card.
+     * Value is a unicode for playingcard.
+     *
+     * @return string $cardString   Value of card as string.
+     */
+
     public function getAsString(): string
     {
         $cardString = ($this->representation . $this->number[$this->value - 1]);
