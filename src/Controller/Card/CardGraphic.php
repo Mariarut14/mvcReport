@@ -8,7 +8,7 @@
  * (c) Maria Ståhlbom
  */
 
-namespace App\Card;
+namespace App\Controller\Card;
 
 /**
  * Methods:

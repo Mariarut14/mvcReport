@@ -41,155 +41,155 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_gameStand"
         },                {
-            "fqsen": "\\App\\Card\\Card",
+            "fqsen": "\\App\\Controller\\Card\\Card",
             "name": "Card",
             "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
-            "url": "classes/App-Card-Card.html"
+            "url": "classes/App-Controller-Card-Card.html"
         },                {
-            "fqsen": "\\App\\Card\\Card\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Constructs\u0020Card.",
-            "url": "classes/App-Card-Card.html#method___construct"
+            "url": "classes/App-Controller-Card-Card.html#method___construct"
         },                {
-            "fqsen": "\\App\\Card\\Card\u003A\u003AsetValue\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Card\u003A\u003AsetValue\u0028\u0029",
             "name": "setValue",
             "summary": "Sets\u0020value\u0020on\u0020Card",
-            "url": "classes/App-Card-Card.html#method_setValue"
+            "url": "classes/App-Controller-Card-Card.html#method_setValue"
         },                {
-            "fqsen": "\\App\\Card\\Card\u003A\u003AgetValue\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Card\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
             "summary": "Returns\u0020value\u0020on\u0020card.",
-            "url": "classes/App-Card-Card.html#method_getValue"
+            "url": "classes/App-Controller-Card-Card.html#method_getValue"
         },                {
-            "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsString\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
             "summary": "Converts\u0020value\u0020on\u0020card\u0020to\u0020string\u002Dversion\u0020of\u0020card.",
-            "url": "classes/App-Card-Card.html#method_getAsString"
+            "url": "classes/App-Controller-Card-Card.html#method_getAsString"
         },                {
-            "fqsen": "\\App\\Card\\Card\u003A\u003A\u0024value",
+            "fqsen": "\\App\\Controller\\Card\\Card\u003A\u003A\u0024value",
             "name": "value",
             "summary": "",
-            "url": "classes/App-Card-Card.html#property_value"
+            "url": "classes/App-Controller-Card-Card.html#property_value"
         },                {
-            "fqsen": "\\App\\Card\\CardGraphic",
+            "fqsen": "\\App\\Controller\\Card\\CardGraphic",
             "name": "CardGraphic",
             "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002AgetAsString",
-            "url": "classes/App-Card-CardGraphic.html"
+            "url": "classes/App-Controller-Card-CardGraphic.html"
         },                {
-            "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\CardGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Constructs\u0020Card.",
-            "url": "classes/App-Card-CardGraphic.html#method___construct"
+            "url": "classes/App-Controller-Card-CardGraphic.html#method___construct"
         },                {
-            "fqsen": "\\App\\Card\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
             "summary": "Converts\u0020value\u0020on\u0020card\u0020to\u0020a\u0020graphic\u0020string\u002Dversion\u0020of\u0020card.",
-            "url": "classes/App-Card-CardGraphic.html#method_getAsString"
+            "url": "classes/App-Controller-Card-CardGraphic.html#method_getAsString"
         },                {
-            "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A\u0024representation",
+            "fqsen": "\\App\\Controller\\Card\\CardGraphic\u003A\u003A\u0024representation",
             "name": "representation",
             "summary": "",
-            "url": "classes/App-Card-CardGraphic.html#property_representation"
+            "url": "classes/App-Controller-Card-CardGraphic.html#property_representation"
         },                {
-            "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A\u0024number",
+            "fqsen": "\\App\\Controller\\Card\\CardGraphic\u003A\u003A\u0024number",
             "name": "number",
             "summary": "",
-            "url": "classes/App-Card-CardGraphic.html#property_number"
+            "url": "classes/App-Controller-Card-CardGraphic.html#property_number"
         },                {
-            "fqsen": "\\App\\Card\\DeckOfCards",
+            "fqsen": "\\App\\Controller\\Card\\DeckOfCards",
             "name": "DeckOfCards",
             "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002Aadd\n\u0020\u002AmakeDeck\n\u0020\u002AgetDeck\n\u0020\u002AgetString",
-            "url": "classes/App-Card-DeckOfCards.html"
+            "url": "classes/App-Controller-Card-DeckOfCards.html"
         },                {
-            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Card-DeckOfCards.html#method___construct"
+            "url": "classes/App-Controller-Card-DeckOfCards.html#method___construct"
         },                {
-            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AmakeDeck\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\DeckOfCards\u003A\u003AmakeDeck\u0028\u0029",
             "name": "makeDeck",
             "summary": "Makes\u0020a\u0020full\u0020deck\u0020of\u002052\u0020CardGraphics\u0020with\u0020value\u00201\u002D52.",
-            "url": "classes/App-Card-DeckOfCards.html#method_makeDeck"
+            "url": "classes/App-Controller-Card-DeckOfCards.html#method_makeDeck"
         },                {
-            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetDeck\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\DeckOfCards\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
             "summary": "Get\u0020array\u0020of\u0020values\u0020of\u0020all\u0020cards\u0020in\u0020the\u0020deck.",
-            "url": "classes/App-Card-DeckOfCards.html#method_getDeck"
+            "url": "classes/App-Controller-Card-DeckOfCards.html#method_getDeck"
         },                {
-            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetString\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\DeckOfCards\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
             "summary": "Returns\u0020values\u0020of\u0020deck\u0020as\u0020graphic\u0020form\u0020in\u0020string.",
-            "url": "classes/App-Card-DeckOfCards.html#method_getString"
+            "url": "classes/App-Controller-Card-DeckOfCards.html#method_getString"
         },                {
-            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A\u0024deck",
+            "fqsen": "\\App\\Controller\\Card\\DeckOfCards\u003A\u003A\u0024deck",
             "name": "deck",
             "summary": "",
-            "url": "classes/App-Card-DeckOfCards.html#property_deck"
+            "url": "classes/App-Controller-Card-DeckOfCards.html#property_deck"
         },                {
-            "fqsen": "\\App\\Card\\Hand",
+            "fqsen": "\\App\\Controller\\Card\\Hand",
             "name": "Hand",
             "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002Aadd\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
-            "url": "classes/App-Card-Hand.html"
+            "url": "classes/App-Controller-Card-Hand.html"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Card-Hand.html#method___construct"
+            "url": "classes/App-Controller-Card-Hand.html#method___construct"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003Aadd\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003Aadd\u0028\u0029",
             "name": "add",
             "summary": "Adds\u0020CardGraphic\u0020to\u0020hand",
-            "url": "classes/App-Card-Hand.html#method_add"
+            "url": "classes/App-Controller-Card-Hand.html#method_add"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003AsetValue\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003AsetValue\u0028\u0029",
             "name": "setValue",
             "summary": "Takes\u0020card\u0020from\u0020deck\u0020and\u0020sets\u0020their\u0020value\u0020on\u0020cards\u0020in\u0020hand.",
-            "url": "classes/App-Card-Hand.html#method_setValue"
+            "url": "classes/App-Controller-Card-Hand.html#method_setValue"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003AgetValue\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
             "summary": "Get\u0020values\u0020from\u0020hand\u0020in\u0020an\u0020array.",
-            "url": "classes/App-Card-Hand.html#method_getValue"
+            "url": "classes/App-Controller-Card-Hand.html#method_getValue"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003AgetAsString\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
             "summary": "Return\u0020an\u0020array\u0020of\u0020cards\u0020in\u0020a\u0020graphic\u0020form\u0020of\u0020string.",
-            "url": "classes/App-Card-Hand.html#method_getAsString"
+            "url": "classes/App-Controller-Card-Hand.html#method_getAsString"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003A\u0024hand",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003A\u0024hand",
             "name": "hand",
             "summary": "",
-            "url": "classes/App-Card-Hand.html#property_hand"
+            "url": "classes/App-Controller-Card-Hand.html#property_hand"
         },                {
-            "fqsen": "\\App\\Card\\Hand\u003A\u003A\u0024deck",
+            "fqsen": "\\App\\Controller\\Card\\Hand\u003A\u003A\u0024deck",
             "name": "deck",
             "summary": "",
-            "url": "classes/App-Card-Hand.html#property_deck"
+            "url": "classes/App-Controller-Card-Hand.html#property_deck"
         },                {
-            "fqsen": "\\App\\Card\\HandGame",
+            "fqsen": "\\App\\Controller\\Card\\HandGame",
             "name": "HandGame",
             "summary": "Methods\u003A\n\u0020\u002Asum\n\u0020\u002Apropability\n\u0020\u002AnewCardInHand\n\u0020\u002AbankPlay",
-            "url": "classes/App-Card-HandGame.html"
+            "url": "classes/App-Controller-Card-HandGame.html"
         },                {
-            "fqsen": "\\App\\Card\\HandGame\u003A\u003Asum\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\HandGame\u003A\u003Asum\u0028\u0029",
             "name": "sum",
             "summary": "Converts\u0020values\u0020of\u0020the\u0020card\u0020in\u0020handgame\u0020to\nthe\u0020values\u0020they\u0020have\u0020in\u0020the\u0020game\u0020and\u0020sums\u0020the\u0020new\u0020value.",
-            "url": "classes/App-Card-HandGame.html#method_sum"
+            "url": "classes/App-Controller-Card-HandGame.html#method_sum"
         },                {
-            "fqsen": "\\App\\Card\\HandGame\u003A\u003Apropability\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\HandGame\u003A\u003Apropability\u0028\u0029",
             "name": "propability",
             "summary": "Sums\u0020the\u0020value\u0020and\u0020counts\u0020the\u0020propabilty\u0020that\u0020a\u0020new\ncard\u0020from\u0020deck\u0020will\u0020lead\u0020to\u0020a\u0020new\u0020sum\u0020thats\u0020more\u0020than\u002021.",
-            "url": "classes/App-Card-HandGame.html#method_propability"
+            "url": "classes/App-Controller-Card-HandGame.html#method_propability"
         },                {
-            "fqsen": "\\App\\Card\\HandGame\u003A\u003AnewCardInPlay\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\HandGame\u003A\u003AnewCardInPlay\u0028\u0029",
             "name": "newCardInPlay",
             "summary": "Takes\u0020away\u0020a\u0020card\u0020from\u0020deck\u0020and\u0020puts\u0020the\u0020card\u0020in\u0020hand.",
-            "url": "classes/App-Card-HandGame.html#method_newCardInPlay"
+            "url": "classes/App-Controller-Card-HandGame.html#method_newCardInPlay"
         },                {
-            "fqsen": "\\App\\Card\\HandGame\u003A\u003AbankPlay\u0028\u0029",
+            "fqsen": "\\App\\Controller\\Card\\HandGame\u003A\u003AbankPlay\u0028\u0029",
             "name": "bankPlay",
             "summary": "Decides\u0020if\u0020bank\u0020should\u0020draw\u0020a\u0020new\u0020card\nbased\u0020on\u0020sum\u0020and\u0020propability.",
-            "url": "classes/App-Card-HandGame.html#method_bankPlay"
+            "url": "classes/App-Controller-Card-HandGame.html#method_bankPlay"
         },                {
             "fqsen": "\\App\\Controller\\CardController",
             "name": "CardController",
@@ -301,10 +301,10 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-controller.html"
         },                {
-            "fqsen": "\\App\\Card",
+            "fqsen": "\\App\\Controller\\Card",
             "name": "Card",
             "summary": "",
-            "url": "namespaces/app-card.html"
+            "url": "namespaces/app-controller-card.html"
         },                {
             "fqsen": "\\App",
             "name": "App",

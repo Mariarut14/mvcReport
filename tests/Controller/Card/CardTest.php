@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Card;
+namespace App\Controller\Card;
 
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +15,7 @@ class CardTest extends TestCase
     public function testCreateObject(): void
     {
         $card = new Card();
-        $this->assertInstanceOf("\App\Card\Card", $card);
+        $this->assertInstanceOf("\App\Controller\Card\Card", $card);
         $res = $card->getValue();
         $exp = null;
         $this->assertEquals($exp, $res);

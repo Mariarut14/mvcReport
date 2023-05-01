@@ -8,9 +8,9 @@
  * (c) Maria Ståhlbom
  */
 
-namespace App\Card;
+namespace App\Controller\Card;
 
-use App\Card\CardGraphic;
+use App\Controller\Card\CardGraphic;
 
 /**
  * Methods:

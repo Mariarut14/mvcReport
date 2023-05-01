@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Card\Card;
-use App\Card\CardGraphic;
-use App\Card\DeckOfCards;
-use App\Card\Hand;
+use App\Controller\Card\Card;
+use App\Controller\Card\CardGraphic;
+use App\Controller\Card\DeckOfCards;
+use App\Controller\Card\Hand;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

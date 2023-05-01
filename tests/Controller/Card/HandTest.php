@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Card;
+namespace App\Controller\Card;
 
 use PHPUnit\Framework\TestCase;
 
@@ -18,7 +18,7 @@ class HandTest extends TestCase
         $deck->makeDeck();
         $deck = $deck->getDeck();
         $hand = new Hand($deck);
-        $this->assertInstanceOf("\App\Card\Hand", $hand);
+        $this->assertInstanceOf("\App\Controller\Card\Hand", $hand);
         $res = $hand->getValue();
         $exp = null;
         foreach ($res as $card) {
