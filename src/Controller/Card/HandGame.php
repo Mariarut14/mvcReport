@@ -63,7 +63,7 @@ class HandGame extends Hand
         foreach ($this->deck as $card) {
             $number = $card->getValue();
             $number = $number % 13;
-            if ($number % 13 == 0 | $number % 13 > 10) {
+            if ($number % 13 == 0 || $number % 13 > 10) {
                 $number = 10;
             }
             if ($number <= $wantedNumber) {
