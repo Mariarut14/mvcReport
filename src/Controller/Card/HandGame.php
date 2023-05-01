@@ -12,7 +12,7 @@ class HandGame extends Hand
         $values = $this->getValue();
         foreach ($values as $card) {
             $card = $card % 13;
-            if ($card % 13 == 0 | $card % 13 >10) {
+            if ($card % 13 == 0 || $card % 13 >10) {
                 $card = 10;
             } elseif ($card % 13 == 1) {
                 $isOne = true;
@@ -69,7 +69,7 @@ class HandGame extends Hand
         $sum = $this->sum();
         $propability = $this->propability();
         $deck = $this->deck;
-        while ($sum < 17 | $propability < 50) {
+        while ($sum < 17 || $propability < 50) {
             $deck = $this->newCardInPlay($deck);
             $sum = $this->sum();
             $propability = $this->propability();
