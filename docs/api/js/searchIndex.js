@@ -98,7 +98,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "",
+            "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002Aadd\n\u0020\u002AmakeDeck\n\u0020\u002AgetDeck\n\u0020\u002AgetString",
             "url": "classes/App-Card-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
@@ -108,17 +108,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AmakeDeck\u0028\u0029",
             "name": "makeDeck",
-            "summary": "",
+            "summary": "Makes\u0020a\u0020full\u0020deck\u0020of\u002052\u0020CardGraphics\u0020with\u0020value\u00201\u002D52.",
             "url": "classes/App-Card-DeckOfCards.html#method_makeDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
-            "summary": "",
+            "summary": "Get\u0020array\u0020of\u0020values\u0020of\u0020all\u0020cards\u0020in\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
-            "summary": "",
+            "summary": "Returns\u0020values\u0020of\u0020deck\u0020as\u0020graphic\u0020form\u0020in\u0020string.",
             "url": "classes/App-Card-DeckOfCards.html#method_getString"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A\u0024deck",
@@ -168,27 +168,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\HandGame",
             "name": "HandGame",
-            "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002Aadd\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
+            "summary": "Methods\u003A\n\u0020\u002Asum\n\u0020\u002Apropability\n\u0020\u002AnewCardInHand\n\u0020\u002AbankPlay",
             "url": "classes/App-Card-HandGame.html"
         },                {
             "fqsen": "\\App\\Card\\HandGame\u003A\u003Asum\u0028\u0029",
             "name": "sum",
-            "summary": "",
+            "summary": "Converts\u0020values\u0020of\u0020the\u0020card\u0020in\u0020handgame\u0020to\nthe\u0020values\u0020they\u0020have\u0020in\u0020the\u0020game\u0020and\u0020sums\u0020the\u0020new\u0020value.",
             "url": "classes/App-Card-HandGame.html#method_sum"
         },                {
             "fqsen": "\\App\\Card\\HandGame\u003A\u003Apropability\u0028\u0029",
             "name": "propability",
-            "summary": "",
+            "summary": "Sums\u0020the\u0020value\u0020and\u0020counts\u0020the\u0020propabilty\u0020that\u0020a\u0020new\ncard\u0020from\u0020deck\u0020will\u0020lead\u0020to\u0020a\u0020new\u0020sum\u0020thats\u0020more\u0020than\u002021.",
             "url": "classes/App-Card-HandGame.html#method_propability"
         },                {
             "fqsen": "\\App\\Card\\HandGame\u003A\u003AnewCardInPlay\u0028\u0029",
             "name": "newCardInPlay",
-            "summary": "",
+            "summary": "Takes\u0020away\u0020a\u0020card\u0020from\u0020deck\u0020and\u0020puts\u0020the\u0020card\u0020in\u0020hand.",
             "url": "classes/App-Card-HandGame.html#method_newCardInPlay"
         },                {
             "fqsen": "\\App\\Card\\HandGame\u003A\u003AbankPlay\u0028\u0029",
             "name": "bankPlay",
-            "summary": "",
+            "summary": "Decides\u0020if\u0020bank\u0020should\u0020draw\u0020a\u0020new\u0020card\nbased\u0020on\u0020sum\u0020and\u0020propability.",
             "url": "classes/App-Card-HandGame.html#method_bankPlay"
         },                {
             "fqsen": "\\App\\Controller\\CardController",

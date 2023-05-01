@@ -1,9 +1,31 @@
 <?php
 
+/**
+ * This file is about class HandGame,
+ * an instance of class Hand.
+ * The class has methods used in card game 21.
+ *
+ * (c) Maria Ståhlbom
+ */
+
 namespace App\Card;
+
+/**
+ * Methods:
+ *  *sum
+ *  *propability
+ *  *newCardInHand
+ *  *bankPlay
+*/
 
 class HandGame extends Hand
 {
+    /**
+     * Converts values of the card in handgame to
+     * the values they have in the game and sums the new value.
+     *
+     * @return int $sum
+     */
     public function sum(): int
     {
         $sum = 0;
@@ -26,6 +48,13 @@ class HandGame extends Hand
         return $sum;
     }
 
+    /**
+     * Sums the value and counts the propabilty that a new
+     * card from deck will lead to a new sum thats more than 21.
+     *
+     * @return float propability
+     */
+
     public function propability(): float
     {
         $sum = $this->sum();
@@ -47,6 +76,9 @@ class HandGame extends Hand
 
 
     /**
+     * Takes away a card from deck and puts the card in hand.
+     * Returns the changed deck.
+     *
     *@param array<CardGraphic> $deck
     *@return array<CardGraphic> $deck
     */
@@ -62,6 +94,9 @@ class HandGame extends Hand
     }
 
     /**
+     * Decides if bank should draw a new card
+     * based on sum and propability.
+     *
     * @return array<CardGraphic> $deck
     */
     public function bankPlay(): array

@@ -118,16 +118,15 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Card/HandGame.php"><a href="files/src-controller-card-handgame.html"><abbr title="src/Controller/Card/HandGame.php">HandGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">Methods:
- *__construct
- *add
- *setValue
- *getValue
- *getAsString</p>
+ *sum
+ *propability
+ *newCardInHand
+ *bankPlay</p>
 
 
 
@@ -176,7 +175,8 @@
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/App-Card-CardGraphic.html"><abbr title="\App\Card\CardGraphic">CardGraphic</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Decides if bank should draw a new card
+based on sum and propability.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-Hand.html#method_getAsString">getAsString()</a>
@@ -197,14 +197,15 @@
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/App-Card-CardGraphic.html"><abbr title="\App\Card\CardGraphic">CardGraphic</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Takes away a card from deck and puts the card in hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-HandGame.html#method_propability">propability()</a>
     <span>
                                 &nbsp;: float    </span>
 </dt>
-<dd></dd>
+<dd>Sums the value and counts the propabilty that a new
+card from deck will lead to a new sum thats more than 21.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-Hand.html#method_setValue">setValue()</a>
@@ -218,7 +219,8 @@
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
+<dd>Converts values of the card in handgame to
+the values they have in the game and sums the new value.</dd>
 
         </dl>
 
@@ -401,11 +403,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Card/HandGame.php"><a href="files/src-controller-card-handgame.html"><abbr title="src/Controller/Card/HandGame.php">HandGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Decides if bank should draw a new card
+based on sum and propability.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">bankPlay</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Card-CardGraphic.html"><abbr title="\App\Card\CardGraphic">CardGraphic</abbr></a>&gt;</span></code>
@@ -505,16 +509,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Card/HandGame.php"><a href="files/src-controller-card-handgame.html"><abbr title="src/Controller/Card/HandGame.php">HandGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Takes away a card from deck and puts the card in hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">newCardInPlay</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Card-CardGraphic.html"><abbr title="\App\Card\CardGraphic">CardGraphic</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Card-CardGraphic.html"><abbr title="\App\Card\CardGraphic">CardGraphic</abbr></a>&gt;</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Returns the changed deck.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -549,24 +556,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Card/HandGame.php"><a href="files/src-controller-card-handgame.html"><abbr title="src/Controller/Card/HandGame.php">HandGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sums the value and counts the propabilty that a new
+card from deck will lead to a new sum thats more than 21.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">propability</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">float</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>propability</p>
+</section>
+
     
 </article>
                     <article
@@ -619,24 +629,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Card/HandGame.php"><a href="files/src-controller-card-handgame.html"><abbr title="src/Controller/Card/HandGame.php">HandGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Converts values of the card in handgame to
+the values they have in the game and sums the new value.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">sum</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>$sum</p>
+</section>
+
     
 </article>
             </section>
