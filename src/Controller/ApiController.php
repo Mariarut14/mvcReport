@@ -143,8 +143,6 @@ class ApiController extends AbstractController
     public function gameStand(
         SessionInterface $session
     ): Response {
-        $player = $session->get("wonPlayer") ?? 0;
-        $bank = $session->get("wonBank") ?? 0;
         $data = [
             "Players current points: "=>$session->get("player"),
             "Banks current points:"=>$session->get("bank"),

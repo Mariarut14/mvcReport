@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682929749">
-  <project timestamp="1682929749">
+<coverage generated="1682930998">
+  <project timestamp="1682930998">
     <file name="/home/maria/dbwebb-kurser/mvc/me/report/src/Controller/ApiController.php">
       <class name="App\Controller\ApiController" namespace="global">
-        <metrics complexity="9" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="85" coveredstatements="0" elements="92" coveredelements="0"/>
+        <metrics complexity="9" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="83" coveredstatements="0" elements="90" coveredelements="0"/>
       </class>
       <line num="20" type="method" name="api" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="23" type="stmt" count="0"/>
@@ -95,9 +95,7 @@
       <line num="152" type="stmt" count="0"/>
       <line num="153" type="stmt" count="0"/>
       <line num="154" type="stmt" count="0"/>
-      <line num="155" type="stmt" count="0"/>
-      <line num="156" type="stmt" count="0"/>
-      <metrics loc="159" ncloc="159" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="85" coveredstatements="0" elements="92" coveredelements="0"/>
+      <metrics loc="157" ncloc="157" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="83" coveredstatements="0" elements="90" coveredelements="0"/>
     </file>
     <file name="/home/maria/dbwebb-kurser/mvc/me/report/src/Controller/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
@@ -169,11 +167,11 @@
       <line num="41" type="stmt" count="7"/>
       <line num="42" type="stmt" count="7"/>
       <line num="44" type="stmt" count="7"/>
-      <line num="50" type="method" name="getValue" visibility="public" complexity="2" crap="2" count="7"/>
-      <line num="52" type="stmt" count="7"/>
-      <line num="53" type="stmt" count="7"/>
-      <line num="54" type="stmt" count="6"/>
-      <line num="56" type="stmt" count="7"/>
+      <line num="50" type="method" name="getValue" visibility="public" complexity="2" crap="2" count="8"/>
+      <line num="52" type="stmt" count="8"/>
+      <line num="53" type="stmt" count="8"/>
+      <line num="54" type="stmt" count="7"/>
+      <line num="56" type="stmt" count="8"/>
       <line num="62" type="method" name="getAsString" visibility="public" complexity="2" crap="2" count="1"/>
       <line num="64" type="stmt" count="1"/>
       <line num="65" type="stmt" count="1"/>
@@ -211,7 +209,7 @@
       <line num="37" type="stmt" count="2"/>
       <line num="38" type="stmt" count="1"/>
       <line num="40" type="stmt" count="2"/>
-      <line num="41" type="stmt" count="2"/>
+      <line num="41" type="stmt" count="1"/>
       <line num="44" type="stmt" count="2"/>
       <line num="45" type="stmt" count="2"/>
       <line num="53" type="method" name="newCardInPlay" visibility="public" complexity="1" crap="1" count="2"/>
@@ -458,6 +456,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="10" loc="792" ncloc="755" classes="9" methods="42" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="355" coveredstatements="84" elements="397" coveredelements="103"/>
+    <metrics files="10" loc="790" ncloc="753" classes="9" methods="42" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="353" coveredstatements="84" elements="395" coveredelements="103"/>
   </project>
 </coverage>

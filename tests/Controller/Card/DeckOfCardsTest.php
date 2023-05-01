@@ -12,12 +12,12 @@ class DeckOfCardsTest extends TestCase
     /**
      * Construct object.
      */
-    public function testGetString()
+    public function testGetString(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
         $deck = $deck->getString();
-        $expString = $deck[rand(1,52)];
+        $expString = $deck[rand(1, 52)];
         $this->assertContains($expString, $deck);
     }
 }

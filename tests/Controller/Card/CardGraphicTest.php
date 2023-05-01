@@ -12,7 +12,7 @@ class CardGraphicTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new CardGraphic();
         $this->assertInstanceOf("\App\Card\CardGraphic", $card);
@@ -24,7 +24,7 @@ class CardGraphicTest extends TestCase
     /**
      * Get value as string and assert value is string.
      */
-    public function testGetAsString()
+    public function testGetAsString(): void
     {
         $card = new CardGraphic();
         $card->setValue(10);

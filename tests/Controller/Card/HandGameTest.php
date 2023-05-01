@@ -12,11 +12,11 @@ class HandGameTest extends TestCase
     /**
      * Count sum on hand and assert value is correct.
      */
-    public function testSum()
+    public function testSum(): void
     {
         $deck = [];
         for ($i=1; $i<=3; $i++) {
-            $deck[] = new CardGraphic;
+            $deck[] = new CardGraphic();
         }
         $i = 8;
         foreach ($deck as $card) {
@@ -25,7 +25,7 @@ class HandGameTest extends TestCase
         }
         $hand = new HandGame($deck);
         for ($i=1; $i<=3; $i++) {
-            $hand->add(new CardGraphic);
+            $hand->add(new CardGraphic());
         }
         $hand->setValue();
         $sum = $hand->sum();
@@ -36,14 +36,14 @@ class HandGameTest extends TestCase
     /**
      * Count propability and check value is between 0 and 100.
      */
-    public function testPropability()
+    public function testPropability(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
         $deck = $deck->getDeck();
         $hand = new HandGame($deck);
         for ($i=1; $i<=3; $i++) {
-            $hand->add(new CardGraphic);
+            $hand->add(new CardGraphic());
         }
         $hand->setValue();
         $propability = $hand->propability();
@@ -55,14 +55,14 @@ class HandGameTest extends TestCase
     /**
     * Draw card from deck into hand and assert hand has got one more card.
     */
-    public function testNewCardInPlay()
+    public function testNewCardInPlay(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
         $deck = $deck->getDeck();
         $hand = new HandGame($deck);
         for ($i=1; $i<=2; $i++) {
-            $hand->add(new CardGraphic);
+            $hand->add(new CardGraphic());
         }
         $deck = $hand->setValue();
         $deck= $hand->newCardInPlay($deck);
@@ -74,11 +74,11 @@ class HandGameTest extends TestCase
     /**
     * Test if sum is more than 16 or propability more than 50 after bankPlay-function.
     */
-    public function testBankPlay()
+    public function testBankPlay(): void
     {
         $deck = [];
         for ($i=1; $i<=4; $i++) {
-            $deck[] = new CardGraphic;
+            $deck[] = new CardGraphic();
         }
         $i = 6;
         foreach ($deck as $card) {
@@ -87,16 +87,16 @@ class HandGameTest extends TestCase
         }
         $hand = new HandGame($deck);
         for ($i=1; $i<=2; $i++) {
-            $hand->add(new CardGraphic);
+            $hand->add(new CardGraphic());
         }
         $hand->setValue();
         $hand->bankPlay();
         $sum = $hand->sum();
         $propability = $hand->propability();
-        $assert = False;
+        $assert = false;
 
-        if ($sum >= 17  || $probability >= 50) {
-            $assert = True;
+        if ($sum >= 17  || $propability >= 50) {
+            $assert = true;
         }
         $this->assertTrue($assert);
     }

@@ -12,7 +12,7 @@ class CardTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new Card();
         $this->assertInstanceOf("\App\Card\Card", $card);
@@ -24,7 +24,7 @@ class CardTest extends TestCase
     /**
      * Set value on card and assert value is int.
      */
-    public function testSetValueCard()
+    public function testSetValueCard(): void
     {
         $card = new Card();
         $card->setValue(10);
@@ -38,7 +38,7 @@ class CardTest extends TestCase
     /**
      * Get value as string and assert value is string.
      */
-    public function testGetAsStringValueHeart()
+    public function testGetAsStringValueHeart(): void
     {
         $card = new Card();
         $card->setValue(10);
@@ -47,7 +47,7 @@ class CardTest extends TestCase
         $this->assertIsString($res);
         $this->assertEquals($exp, $res);
     }
-    public function testGetAsStringValueDiamonds()
+    public function testGetAsStringValueDiamonds(): void
     {
         $card = new Card();
         $card->setValue(20);
@@ -56,7 +56,7 @@ class CardTest extends TestCase
         $this->assertIsString($res);
         $this->assertEquals($exp, $res);
     }
-    public function testGetAsStringValueClubs()
+    public function testGetAsStringValueClubs(): void
     {
         $card = new Card();
         $card->setValue(30);
@@ -65,7 +65,7 @@ class CardTest extends TestCase
         $this->assertIsString($res);
         $this->assertEquals($exp, $res);
     }
-    public function testGetAsStringValueSpades()
+    public function testGetAsStringValueSpades(): void
     {
         $card = new Card();
         $card->setValue(50);

@@ -12,21 +12,21 @@ class HandTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
         $deck = $deck->getDeck();
         $hand = new Hand($deck);
-        $this->assertInstanceOf("\App\Card\Hand",$hand);
+        $this->assertInstanceOf("\App\Card\Hand", $hand);
         $res = $hand->getValue();
         $exp = null;
         foreach ($res as $card) {
-            $this->assertEquals($exp, $res);
+            $this->assertEquals($exp, $card);
         }
     }
 
-    public function testAddCardGraphics()
+    public function testAddCardGraphics(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
@@ -39,7 +39,7 @@ class HandTest extends TestCase
         $exp = 5;
         $this->assertEquals($exp, count($hand));
     }
-    public function testSetValue()
+    public function testSetValue(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
@@ -49,13 +49,14 @@ class HandTest extends TestCase
             $hand->add(new CardGraphic());
         }
         $deck = $hand->setValue();
-        foreach ($hand as $card) {
+        $values = $hand->getValue();
+        foreach ($values as $card) {
             $this->assertIsInt($card);
         }
         $expCountDeck = 47;
         $this->assertEquals($expCountDeck, count($deck));
     }
-    public function testGetValue()
+    public function testGetValue(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
@@ -70,7 +71,7 @@ class HandTest extends TestCase
             $this->assertIsInt($value);
         }
     }
-    public function testGetAsString()
+    public function testGetAsString(): void
     {
         $deck = new DeckOfCards();
         $deck->makeDeck();
