@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Show_one_book{% endblock %}
+
+{% block body %}
+    <article class="article" >
+        <h1>Information about book {{ book.id }}:</h1>
+        <div class="library" >
+            <div class="text" >
+                <h6>Title: {{ book.title}}</h6>
+                <p>ISBN: {{ book.isbn}}</p>
+                <p>Author: {{ book.name}}</p>
+            </div>
+            <img src="{{ asset('img/'~book.img)}}" alt="{{book.title}}" width=200px >
+        </div>
+    </article>
+{% endblock %}

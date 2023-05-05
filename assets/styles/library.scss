@@ -1,0 +1,19 @@
+.library {
+    display: flex;
+    justify-content:flex-start;
+    gap: 10px;
+    padding-bottom: 2em;
+    padding-top: 1em;
+    background-color: whitesmoke;
+    box-shadow: 3px 3px 2px rgb(119, 119, 119);
+    width: 500px;
+    margin-bottom: 2em;
+    border-radius: 10px;
+    .text {
+        width: 250px;
+        padding-left: 1em;
+    }
+    img {
+        box-shadow: 3px 3px 2px rgb(119, 119, 119);
+    }
+}

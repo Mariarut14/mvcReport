@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>All books in Library:</h1>
+    <div class="library">
+    {% for book in library %}
+        <div class="book">
+        <h6>Title: {{ book.title}}</h6>
+        <p>ISBN: {{ book.isbn}}</p>
+        <p>Author: {{ book.name}}</p>
+        <img src="{{ asset('img/'~book.img)}}" alt="{{book.title}}" width=100px >
+        </div>
+        <table>
+            <tr>
+                <th>Title</th><th>Author</th><th>ISBN</th>
+            </tr>
+            {% for book in library %}
+            <tr>
+                <td><a href="{{ path('library_by_id', {id:book.id}) }}" >{{ book.title }}</a></td><td>{{ book.name }}</td><td>{{ book.isbn }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+    </div>
+
+{% endblock %}
