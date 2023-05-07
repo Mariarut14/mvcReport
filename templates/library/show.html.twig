@@ -3,17 +3,10 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>All books in Library:</h1>
-    <div class="library">
-    {% for book in library %}
-        <div class="book">
-        <h6>Title: {{ book.title}}</h6>
-        <p>ISBN: {{ book.isbn}}</p>
-        <p>Author: {{ book.name}}</p>
-        <img src="{{ asset('img/'~book.img)}}" alt="{{book.title}}" width=100px >
-        </div>
+    <article class="article" >
+        <h1>All books in Library:</h1>
         <table>
-            <tr>
+            <tr background="{{ asset('img/library.jpg')}}">
                 <th>Title</th><th>Author</th><th>ISBN</th>
             </tr>
             {% for book in library %}
@@ -22,7 +15,6 @@
             </tr>
             {% endfor %}
         </table>
-    {% endfor %}
-    </div>
+    </article>
 
 {% endblock %}

@@ -16,4 +16,23 @@
     img {
         box-shadow: 3px 3px 2px rgb(119, 119, 119);
     }
+
+    
+}
+
+table {
+    table-layout: fixed;
+    width: 70%;
+    border-collapse: collapse;
+    border: 3px solid $background-alternative-color;
+    th,
+    td {
+        padding: 20px;
+        border: solid $background-alternative-color 3px;
+    }
+    margin-bottom: 2em;
+    th {
+        color: whitesmoke;
+        font-size: 1.6em;
+    }
 }
