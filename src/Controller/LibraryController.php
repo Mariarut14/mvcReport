@@ -33,10 +33,10 @@ class LibraryController extends AbstractController
     ): Response {
         $entityManager = $doctrine->getManager();
 
-        $title = $request->request->get('title');
-        $isbn = $request->request->get('isbn');
-        $name = $request->request->get('name');
-        $img = $request->request->get('img');
+        $title = (string)$request->request->get('title');
+        $isbn = (string)$request->request->get('isbn');
+        $name = (string)$request->request->get('name');
+        $img = (string)$request->request->get('img');
         $library = new Library();
         $library->setTitle($title);
         $library->setIsbn($isbn);
@@ -63,9 +63,6 @@ class LibraryController extends AbstractController
             $book->getImg();
             $book->getId();
         }
-        $data = [
-            'library'=>$library
-        ];
 
         return $this->render('library/show.html.twig', ['library' =>$library]);
     }
@@ -107,15 +104,14 @@ class LibraryController extends AbstractController
         LibraryRepository $libraryRepository,
         int $id,
         Request $request
-
     ): Response {
         $library = $libraryRepository
             ->find($id);
 
-        $title = $request->request->get('title');
-        $isbn = $request->request->get('isbn');
-        $name = $request->request->get('name');
-        $img = $request->request->get('img');
+        $title = (string)$request->request->get('title');
+        $isbn = (string)$request->request->get('isbn');
+        $name = (string)$request->request->get('name');
+        $img = (string)$request->request->get('img');
 
         if (!$library) {
             throw $this->createNotFoundException(

@@ -193,7 +193,7 @@ class ApiController extends AbstractController
 
         $response = $this->json($book);
         $response->setEncodingOptions(
-        $response->getEncodingOptions() | JSON_PRETTY_PRINT
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
     }
