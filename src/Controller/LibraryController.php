@@ -47,7 +47,7 @@ class LibraryController extends AbstractController
 
         $entityManager->flush();
 
-        return new Response('Saved new Library with id '.$library->getId());
+        return $this->redirectToRoute('library_show_all');
     }
 
     #[Route('/library/show', name: 'library_show_all')]
