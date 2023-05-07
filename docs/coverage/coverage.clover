@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683456652">
-  <project timestamp="1683456652">
+<coverage generated="1683480504">
+  <project timestamp="1683480504">
     <file name="/home/maria/dbwebb-kurser/mvc/me/report/src/Controller/ApiController.php">
       <class name="App\Controller\ApiController" namespace="global">
         <metrics complexity="12" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="108" coveredstatements="0" elements="117" coveredelements="0"/>
@@ -218,7 +218,7 @@
       <line num="35" type="stmt" count="3"/>
       <line num="36" type="stmt" count="3"/>
       <line num="37" type="stmt" count="3"/>
-      <line num="38" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="1"/>
       <line num="39" type="stmt" count="3"/>
       <line num="40" type="stmt" count="1"/>
       <line num="41" type="stmt" count="1"/>
