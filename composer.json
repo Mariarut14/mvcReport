@@ -106,7 +106,8 @@
             "@csfix"
         ],
         "phpdoc": "tools/phpdoc/phpdoc --config=phpdocs.xml",
-        "phpunit": "XDEBUG_MODE=coverage  vendor/bin/phpunit"
+        "phpunit": "XDEBUG_MODE=coverage  vendor/bin/phpunit",
+        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json"
 
     },
     "conflict": {
