@@ -7,11 +7,13 @@
         <h1>All books in Library:</h1>
         <table>
             <tr background="{{ asset('img/library.jpg')}}">
-                <th>Title</th><th>Author</th><th>ISBN</th>
+                <th>Title</th><th>Author</th><th>ISBN</th><th style="width: 10%">Update</th><th style="width: 10%">Delete</th>
             </tr>
             {% for book in library %}
             <tr>
                 <td><a href="{{ path('library_by_id', {id:book.id}) }}" >{{ book.title }}</a></td><td>{{ book.name }}</td><td>{{ book.isbn }}</td>
+                <td><a href="{{ path('library_update_get', {id:book.id})}}">&#x270e</a></td>
+                <td><a href="{{ path('library_delete_get', {id:book.id})}}">&#x1F5D1</a></td>
             </tr>
             {% endfor %}
         </table>

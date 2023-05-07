@@ -85,4 +85,84 @@ class LibraryController extends AbstractController
 
         return $this->render('library/show_one.html.twig', ['book'=>$book]);
     }
+
+    #[Route('/library/update/{id}', name: 'library_update_get', methods: ['GET'])]
+    public function updateLibrary(
+        LibraryRepository $libraryRepository,
+        int $id
+    ): Response {
+        $book = $libraryRepository
+            ->find($id);
+        $book->getTitle();
+        $book->getIsbn();
+        $book->getName();
+        $book->getImg();
+        $book->getId();
+
+        return $this->render('library/update.html.twig', ['book'=>$book]);
+    }
+
+    #[Route('/library/update/{id}', name: 'library_update_post', methods: ['POST'])]
+    public function updateLibrarycallback(
+        LibraryRepository $libraryRepository,
+        int $id,
+        Request $request
+
+    ): Response {
+        $library = $libraryRepository
+            ->find($id);
+
+        $title = $request->request->get('title');
+        $isbn = $request->request->get('isbn');
+        $name = $request->request->get('name');
+        $img = $request->request->get('img');
+
+        if (!$library) {
+            throw $this->createNotFoundException(
+                'No book found for id '.$id
+            );
+        }
+        $library->setTitle($title);
+        $library->setIsbn($isbn);
+        $library->setName($name);
+        $library->setImg($img);
+
+        $libraryRepository->save($library, true);
+
+        return $this->redirectToRoute('library_show_all');
+    }
+
+    #[Route('/library/delete/{id}', name: 'library_delete_get', methods: ['GET'])]
+    public function deleteLibrary(
+        LibraryRepository $libraryRepository,
+        int $id
+    ): Response {
+        $book = $libraryRepository
+            ->find($id);
+        $book->getTitle();
+        $book->getIsbn();
+        $book->getName();
+        $book->getImg();
+        $book->getId();
+
+        return $this->render('library/delete.html.twig', ['book'=>$book]);
+    }
+    #[Route('/library/delete/{id}', name: 'library_delete_post')]
+    public function deleteLibraryCallback(
+        LibraryRepository $libraryRepository,
+        int $id
+    ): Response {
+        $library = $libraryRepository
+            ->find($id);
+
+        if (!$library) {
+            throw $this->createNotFoundException(
+                'No book found for id '.$id
+            );
+        }
+
+        $libraryRepository->remove($library, true);
+
+        return $this->redirectToRoute('library_show_all');
+    }
 }

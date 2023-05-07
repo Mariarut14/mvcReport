@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Show_one_book{% endblock %}
+
+{% block body %}
+    <article class="article" >
+        <h1>Delete book {{ book.id }} from library:</h1>
+        <div class="library" >
+            <div class="text" >
+                <h6>Title: {{ book.title}}</h6>
+                <p>ISBN: {{ book.isbn}}</p>
+                <p>Author: {{ book.name}}</p>
+            </div>
+            <img src="{{ asset('img/'~book.img)}}" alt="{{book.title}}" width=200px >
+        </div>
+        <form class="label-left" method="post" action="{{ path('library_delete_post', {id:book.id}) }}">
+            <legend>Delete from library</legend>
+            <input type="submit" value="Delete">
+        </form>
+    </article>
+{% endblock %}
