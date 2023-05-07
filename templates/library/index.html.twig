@@ -3,12 +3,16 @@
 {% block title %}Library{% endblock %}
 
 {% block body %}
+<div class="books" style="background-image: url('{{asset( 'img/books.jpg' )}}');">
 
+<article class="index">
 <h1>Welcome to the library!</h1>
 
 <p>What do you want to do?</p>
 <ul>
-    <li><a href="{{ path('library_create_get') }}">Add a new book in library</a>
-    <li><a href="{{ path('library_show_all') }}">Show all books in library</a>
+    <li><a href="{{ path('library_create_get') }}">Add a new book in library.</a></li>
+    <li><a href="{{ path('library_show_all') }}">Show all books or update/delete in library. </a></li>
 </ul>
+</article>
+</div>
 {% endblock %}

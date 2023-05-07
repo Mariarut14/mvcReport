@@ -14,6 +14,9 @@
         and show how many cards there are left. Change number of cards 
         by writing another number in url.</a></li>
         <li><a href="{{path ('json_game_standing') }}">Shows standing between player and bank in card game 21.</a></li>
+        <li><a href="{{path ('api_library_books')}}" >Show all books in library.</a></li>
+        <li><a href="{{path ('api_library_book', {isbn:'978-91-8023-940-0'})}}" >Show book with ISBN 978-91-8023-940-0. <br>
+        (Change ISBN-number in query if you want to see antoher book.)</a></li>
     </ul> 
 
 {% endblock %}
