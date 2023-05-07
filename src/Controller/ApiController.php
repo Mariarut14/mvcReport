@@ -51,7 +51,6 @@ class ApiController extends AbstractController
     #[Route("/api/deck", name: "json_deck") ]
     public function allCards(): Response
     {
-        $cardDeck = [];
         $cardDeck = new DeckOfCards();
         $cardDeck->makeDeck();
         $cardDeck = $cardDeck->getString();
@@ -69,7 +68,6 @@ class ApiController extends AbstractController
         SessionInterface $session
     ): Response {
         $session->clear();
-        $cardDeck = [];
         $cardDeck = new DeckOfCards();
         $cardDeck->makeDeck();
         $cardDeck = $cardDeck->getString();
@@ -87,7 +85,6 @@ class ApiController extends AbstractController
         SessionInterface $session
     ): Response {
         if (empty($session->get("deck"))) {
-            $cardDeck = [];
             $cardDeck = new DeckOfCards();
             $cardDeck->makeDeck();
             $cardDeck = $cardDeck->getDeck();

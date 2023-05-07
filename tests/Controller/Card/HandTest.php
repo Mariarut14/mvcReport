@@ -65,7 +65,7 @@ class HandTest extends TestCase
         for ($i=1; $i<=5; $i++) {
             $hand->add(new CardGraphic());
         }
-        $deck = $hand->setValue();
+        $hand->setValue();
         $values = $hand->getValue();
         foreach ($values as $value) {
             $this->assertIsInt($value);
@@ -80,7 +80,7 @@ class HandTest extends TestCase
         for ($i=1; $i<=5; $i++) {
             $hand->add(new CardGraphic());
         }
-        $deck = $hand->setValue();
+        $hand->setValue();
         $res = $hand->getAsString();
         foreach ($res as $card) {
             $this->assertIsString($card);

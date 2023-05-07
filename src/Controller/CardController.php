@@ -24,7 +24,6 @@ class CardController extends AbstractController
     #[Route("/card/deck", name: "card_deck")]
     public function allCards(): Response
     {
-        $cardDeck = [];
         $cardDeck = new DeckOfCards();
         $cardDeck->makeDeck();
         $cardDeck = $cardDeck->getString();
@@ -40,7 +39,6 @@ class CardController extends AbstractController
         SessionInterface $session
     ): Response {
         $session->clear();
-        $cardDeck = [];
         $cardDeck = new DeckOfCards();
         $cardDeck->makeDeck();
         $cardDeck = $cardDeck->getString();
@@ -56,7 +54,6 @@ class CardController extends AbstractController
         SessionInterface $session
     ): Response {
         if (empty($session->get("deck"))) {
-            $cardDeck = [];
             $cardDeck = new DeckOfCards();
             $cardDeck->makeDeck();
             $cardDeck = $cardDeck->getDeck();
@@ -87,7 +84,6 @@ class CardController extends AbstractController
         $numCard = $num;
 
         if (empty($session->get("deck"))) {
-            $cardDeck = [];
             $cardDeck = new DeckOfCards();
             $cardDeck->makeDeck();
             $cardDeck = $cardDeck->getDeck();
