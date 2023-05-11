@@ -6,7 +6,8 @@
 
 {% block body %}
     <article class=article>
-        <h1>Introduktion</h1>
+    <h1>Kodkvalité och "clean code"</h1>
+        <h6>Introduktion</h6>
         <p></p>
         <ul>        
             <li>Codestyle - Olika programmeringsspråk har olika codestyle, alltså "regler" 
@@ -30,17 +31,26 @@
             <li>Cohesion - LCOM (Lack of cohesion of methods) är ett mätvärde på hur mycket 
             metoderna i en klass är sammankopplade. Man eftersträvar ett lågt värde som alltså 
             betyder att det är en låg avsaknad av samband mellan metoderna. Om värdet är högt 
-            behöver antagligen klassen delas upp i flera klasser. </li
-            <li>Coupling - </li
-            <li>CRAP - </li
+            behöver antagligen klassen delas upp i flera klasser. När jag tittar på mina 
+            klasser är det controllern apiController som sticker ut med ett värde på 8.</li
+            <li>Coupling - AC (afferent coupling) mäter hur många klasser som påverkas av 
+            analyserade klassen och EC (efferent coupling) mäter hur många andra klasser som 
+            analyserade klassen påverkas av. Controller-klasserna har alltså hög EF eftersom 
+            de är beroende av andra klasser medan t.ex. CardGraphic-klassen påverkar många andra klasser 
+            och alltså har högt AC (5).</li
+            <li>CRAP - Change Risk Analyzer and Predictor (CRAP) mäter kombinationen komplexitet och 
+            test-täckning. Ju högre komplexitet desto större del av koden behöver testas. Man ska 
+            sträva efter att hamna under värdet 30. Eftersom jag inte har några test på 
+            kontroll-klasserna blir CRAP-värdet högt på de metoderna, t.ex. metoden playBank får 
+            CRAP-värdet 20.</li
         </ul>
-        <h1>Phpmetrics</h1>
+        <h6>Phpmetrics</h6>
         <p></p>
-        <h1>Scrutinizer</h1>
+        <h6>Scrutinizer</h6>
         <p></p>
-        <h1>Förbättringar</h1>
+        <h6>Förbättringar</h6>
         <p></p>
-        <h1>Diskussion</h1>
+        <h6>Diskussion</h6>
         <p></p>
     </article>
 {% endblock %}
