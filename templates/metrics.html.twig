@@ -1,0 +1,46 @@
+{# templates/about.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}Report{% endblock %}
+
+{% block body %}
+    <article class=article>
+        <h1>Introduktion</h1>
+        <p></p>
+        <ul>        
+            <li>Codestyle - Olika programmeringsspråk har olika codestyle, alltså "regler" 
+            för hur koden ska skrivas (även om mycket är lika också). Programmen kan 
+            fungera bra även om man inte följer reglerna, men koden blir tydligare och 
+            enklare att tyda om reglerna följs. Det kan t.ex. handla om radlängd, 
+            indentering, kommentarer och onödig kod. </li
+            <li>Coverage - Ett mättal på hur många procent av koden som blir testad av 
+            testfiler. Mäts i procent. I mitt projekt fick jag endast 19 % eftersom jag 
+            bara har test på cardgame-klasserna och inte på controllerna eller 
+            library-klasserna.
+            </li
+            <li>Complexity - Om ett projekt eller klass får ett högt värde på complexity 
+            så är koden uppbyggd med många valsituationer. Starvärdet är 1 och sedan läggs 
+            det till +1 för varje valsituation. Det kan t.ex. vara if-satser, 
+            while-loopar och for-loopar. Kod med hög komplexitet är svår-testad 
+            och kan även vara svår att förstå och leta fel i. Ett bra sätt att undvika hög 
+            komplexitet är att hålla klasserna små och vara noga med att de bara gör en sak.
+            Min klass som har högst complexity (16) är HandGame och testklassen som hör till den. 
+            Inte så förvånande eftersom spelet består av många valsituationer.</li
+            <li>Cohesion - LCOM (Lack of cohesion of methods) är ett mätvärde på hur mycket 
+            metoderna i en klass är sammankopplade. Man eftersträvar ett lågt värde som alltså 
+            betyder att det är en låg avsaknad av samband mellan metoderna. Om värdet är högt 
+            behöver antagligen klassen delas upp i flera klasser. </li
+            <li>Coupling - </li
+            <li>CRAP - </li
+        </ul>
+        <h1>Phpmetrics</h1>
+        <p></p>
+        <h1>Scrutinizer</h1>
+        <p></p>
+        <h1>Förbättringar</h1>
+        <p></p>
+        <h1>Diskussion</h1>
+        <p></p>
+    </article>
+{% endblock %}
