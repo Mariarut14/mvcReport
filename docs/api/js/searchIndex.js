@@ -41,16 +41,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_gameStand"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AshowAllLibrary\u0028\u0029",
-            "name": "showAllLibrary",
-            "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_showAllLibrary"
-        },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AupdateLibrary\u0028\u0029",
-            "name": "updateLibrary",
-            "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_updateLibrary"
-        },                {
             "fqsen": "\\App\\Controller\\Card\\Card",
             "name": "Card",
             "summary": "Methods\u003A\n\u0020\u002A__construct\n\u0020\u002AsetValue\n\u0020\u002AgetValue\n\u0020\u002AgetAsString",
@@ -296,6 +286,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ReportControllerTwig.html#method_quote"
         },                {
+            "fqsen": "\\App\\Controller\\ReportControllerTwig\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ReportControllerTwig.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
@@ -445,6 +440,21 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/App-Repository-LibraryRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController",
+            "name": "ApiLibraryController",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController\u003A\u003AshowAllLibrary\u0028\u0029",
+            "name": "showAllLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html#method_showAllLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController\u003A\u003AupdateLibrary\u0028\u0029",
+            "name": "updateLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html#method_updateLibrary"
         },                {
             "fqsen": "\\",
             "name": "\\",
