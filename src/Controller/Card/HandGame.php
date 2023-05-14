@@ -30,6 +30,7 @@ class HandGame extends Hand
     {
         $sum = 0;
         $isOne = false;
+        $values = [];
         $values = $this->getValue();
         foreach ($values as $card) {
             $card = $card % 13;
@@ -83,6 +84,7 @@ class HandGame extends Hand
     */
     public function newCardInPlay($deck): array
     {
+        $card = new CardGraphic();
         shuffle($deck);
         $value=array_splice($deck, 0, 1);
         $card = $value[0];

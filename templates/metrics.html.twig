@@ -45,9 +45,27 @@
             CRAP-värdet 20.</li
         </ul>
         <h6>Phpmetrics</h6>
-        <p></p>
+        <p>När jag analyserar min kod med Phpmetrics får jag resultatet:
+        <img src="{{asset(img/metrics.png)}}" alt='metrics' ></img>
+        <p>Jag har LOC på 872 rader vilket är en rimlig summa, men när man 
+        tittar hur mycket det är i varje klass så kanske det är på gränsen 
+        till mycket i vissa klasser, som t.ex. controller-klasserna.</p>
+        <p>Jag får även 6 st varningar där en är röd. Det är api-controllern 
+        som har många metoder och inte följer "single-responsability".</p>
+        <img src="{{asset(img/metrics_violations.png)}}"></img>
+        <p>Komplexiteten ligger strax under 4/klass, men klassen Handgame 
+        ligger högt över med 13. Det är många beslut som tas när framför allt 
+        banken spelar så det är ganska väntat att det blir ett högt 
+        värde på den klassen.</p>
+        <p>De delar jag tänker förbättra är api-controllern som både innehåller 
+        många metoder och har dålig cohesion. (LCOM=8) Egentligen borde även 
+        klassen HandGame ses över, men blir ett för stort projekt att ändra då 
+        det kommer påverka så många andra delar så det ryms inte i det här kursmomentet.</p>
         <h6>Scrutinizer</h6>
         <p></p>
+        https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/quality-score.png?b=main
+        https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/coverage.png?b=main
+        https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/build.png?b=main
         <h6>Förbättringar</h6>
         <p></p>
         <h6>Diskussion</h6>

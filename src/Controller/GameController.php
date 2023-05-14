@@ -135,7 +135,7 @@ class GameController extends AbstractController
         for ($i = 1; $i <=2; $i++) {
             $hand->add(new CardGraphic());
         }
-        $hand->setValue();
+        $deck = $hand->setValue();
         $deck = $hand->bankPlay();
         $sum = $hand->sum();
         if  ($sum > 21) {
