@@ -82,12 +82,29 @@
         <img src="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/build.png?b=main" ></a>
         <h6>Förbättringar</h6>
         <p>Jag löser mina issues med onödig kod, genom att ta bort tilldelningar av 
-        varibler som var onödiga. Jag ändrar även i configfilen för csfix för att lösa de två  buggarna
-        som Scrutinizer varnade för.</p>
+        variabler som var onödiga. </p>
         Jag delar upp min apiController i två nya controllers; apiController och LibraryController för att
          minska LCOM-värdet på apiControllern. Det löser även error-meddelandet 
         från metrics om att klassen inte har "single-responsability" och ger lägre komplexitet.
+        Skillnad:
+        Tidigare hade jag 6 issues på Scrutinizer, nu har jag endast 3. På phpmetrics hade jag en violation 
+        som var critical och som nu försvunnit sedan jag delat upp apiControllern. Jag har även sänkt LCOM 
+        från 8 till 7. Jag har inte hittat så många sätt att förbättra mina värden då mycket beror på att 
+        vi inte har tester på controllerna. Mina metoder skulle säkert gå att förenkla, men i 
+        nuläget skulle det innebära för stora förändringar.
         <h6>Diskussion</h6>
-        <p></p>
+        <p>Det verkar finnas många olika verktyg som hjälp för att nå ren kod. Det finns absolut en 
+        nytta med att använda dem, man hittar sina fel och brister snabbt och de blir tydliga. Statistik 
+        av olika slag är alltid bra, eftersom det annars lätt blir ett tyckande och kanske inte 
+        så objektivt. Sen gäller det förstås att använda sitt sunda förnuft och fundera över om 
+        det är värt ansträngningen att ändra koden. Det kan ju finnas en anledning att koden ser 
+        ut på ett visst sett. Nackdelarna är väl att man blir för "fixerad" vid clean code att funktionen 
+        blir lidande. Det kan ju också finnas en tidsaspekt, att det tar för lång tid 
+        att fokusera på hur koden ser ut, tid som kanske inte finns. 
+        </p>
+        <p>Jag har inte så många idéer om andra sätt att arbeta med ren kod, men jag tror att ju mer 
+        man arbetar med andra i team, desto mer lär man sig att skriva "snyggt" eftersom det blir 
+        en nödvändighet. Ska alla förstå och kunna följa koden bör man ha en gemensam stil och tydliga 
+        kommentarer. Små korta klasser är också enklare att förstå.</p>
     </article>
 {% endblock %}
