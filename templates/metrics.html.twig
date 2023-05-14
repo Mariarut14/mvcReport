@@ -14,12 +14,12 @@
             för hur koden ska skrivas (även om mycket är lika också). Programmen kan 
             fungera bra även om man inte följer reglerna, men koden blir tydligare och 
             enklare att tyda om reglerna följs. Det kan t.ex. handla om radlängd, 
-            indentering, kommentarer och onödig kod. </li
+            indentering, kommentarer och onödig kod. </li>
             <li>Coverage - Ett mättal på hur många procent av koden som blir testad av 
             testfiler. Mäts i procent. I mitt projekt fick jag endast 19 % eftersom jag 
             bara har test på cardgame-klasserna och inte på controllerna eller 
             library-klasserna.
-            </li
+            </li>
             <li>Complexity - Om ett projekt eller klass får ett högt värde på complexity 
             så är koden uppbyggd med många valsituationer. Starvärdet är 1 och sedan läggs 
             det till +1 för varje valsituation. Det kan t.ex. vara if-satser, 
@@ -27,47 +27,65 @@
             och kan även vara svår att förstå och leta fel i. Ett bra sätt att undvika hög 
             komplexitet är att hålla klasserna små och vara noga med att de bara gör en sak.
             Min klass som har högst complexity (16) är HandGame och testklassen som hör till den. 
-            Inte så förvånande eftersom spelet består av många valsituationer.</li
+            Inte så förvånande eftersom spelet består av många valsituationer.</li>
             <li>Cohesion - LCOM (Lack of cohesion of methods) är ett mätvärde på hur mycket 
             metoderna i en klass är sammankopplade. Man eftersträvar ett lågt värde som alltså 
             betyder att det är en låg avsaknad av samband mellan metoderna. Om värdet är högt 
             behöver antagligen klassen delas upp i flera klasser. När jag tittar på mina 
-            klasser är det controllern apiController som sticker ut med ett värde på 8.</li
+            klasser är det controllern apiController som sticker ut med ett värde på 8.</li>
             <li>Coupling - AC (afferent coupling) mäter hur många klasser som påverkas av 
             analyserade klassen och EC (efferent coupling) mäter hur många andra klasser som 
             analyserade klassen påverkas av. Controller-klasserna har alltså hög EF eftersom 
             de är beroende av andra klasser medan t.ex. CardGraphic-klassen påverkar många andra klasser 
-            och alltså har högt AC (5).</li
+            och alltså har högt AC (5).</li>
             <li>CRAP - Change Risk Analyzer and Predictor (CRAP) mäter kombinationen komplexitet och 
             test-täckning. Ju högre komplexitet desto större del av koden behöver testas. Man ska 
             sträva efter att hamna under värdet 30. Eftersom jag inte har några test på 
             kontroll-klasserna blir CRAP-värdet högt på de metoderna, t.ex. metoden playBank får 
-            CRAP-värdet 20.</li
+            CRAP-värdet 20.</li>
         </ul>
         <h6>Phpmetrics</h6>
-        <p>När jag analyserar min kod med Phpmetrics får jag resultatet:
-        <img src="{{asset(img/metrics.png)}}" alt='metrics' ></img>
+        <p>När jag analyserar min kod med Phpmetrics får jag resultatet:</p>
+        <img src="{{asset('img/metrics.png')}}" width=500px alt='metrics' >
         <p>Jag har LOC på 872 rader vilket är en rimlig summa, men när man 
         tittar hur mycket det är i varje klass så kanske det är på gränsen 
         till mycket i vissa klasser, som t.ex. controller-klasserna.</p>
         <p>Jag får även 6 st varningar där en är röd. Det är api-controllern 
         som har många metoder och inte följer "single-responsability".</p>
-        <img src="{{asset(img/metrics_violations.png)}}"></img>
+        <img src="{{asset('img/metrics_violations.png')}}" width=500px alt="metrics">
         <p>Komplexiteten ligger strax under 4/klass, men klassen Handgame 
         ligger högt över med 13. Det är många beslut som tas när framför allt 
         banken spelar så det är ganska väntat att det blir ett högt 
-        värde på den klassen.</p>
+        värde på den klassen. Det syns även på "difficulty"-värdet som också är
+        högst i den klassen</p>
         <p>De delar jag tänker förbättra är api-controllern som både innehåller 
         många metoder och har dålig cohesion. (LCOM=8) Egentligen borde även 
         klassen HandGame ses över, men blir ett för stort projekt att ändra då 
         det kommer påverka så många andra delar så det ryms inte i det här kursmomentet.</p>
         <h6>Scrutinizer</h6>
-        <p></p>
-        https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/quality-score.png?b=main
-        https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/coverage.png?b=main
-        https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/build.png?b=main
+        <p>När jag tittar på Scrutinizer ser jag att jag får 9.95 och att koden alltså är 
+        ganska okej överlag. Klasserna och metoderna har nivå A utom en som har B. Jag har 
+        endast 6 issues som jag behöver ta tag i;
+        Det är 2 buggar, 1 "unknown" och 3 "unused code".  
+        Jag kan också se att det är dålig coverage (19%) och att funktionen sum() har kvalité B,
+        antagligen för att den innehåller 7 villkor. Funktionen playBank har högst CRAP-värde, 20, 
+        och skulle kanske också behöva tittas på. Jag fick inga rapporter om cohesion och coupling.</p>
+
+        
+        <img src="{{ asset('img/scrutinizer.png')}}" width=500px alt="scrutinizer"><br><br>
+        <a href="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/?branch=main" >
+        <img src="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/quality-score.png?b=main" ></a>
+        <a href="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/?branch=main" >
+        <img src="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/coverage.png?b=main" ></a>      
+        <a href="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/inspections/7d6766ee-62d4-4e3e-a061-feadfef032ff/log" >
+        <img src="https://scrutinizer-ci.com/g/Mariarut14/mvcReport/badges/build.png?b=main" ></a>
         <h6>Förbättringar</h6>
-        <p></p>
+        <p>Jag löser mina issues med onödig kod, genom att ta bort tilldelningar av 
+        varibler som var onödiga. Jag ändrar även i configfilen för csfix för att lösa de två  buggarna
+        som Scrutinizer varnade för.</p>
+        Jag delar upp min apiController i två nya controllers; apiController och LibraryController för att
+         minska LCOM-värdet på apiControllern. Det löser även error-meddelandet 
+        från metrics om att klassen inte har "single-responsability" och ger lägre komplexitet.
         <h6>Diskussion</h6>
         <p></p>
     </article>

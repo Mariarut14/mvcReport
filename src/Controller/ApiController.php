@@ -154,7 +154,7 @@ class ApiController extends AbstractController
         return $response;
     }
 
-    #[Route('/api/library/books', name: 'api_library_books')]
+    /**#[Route('/api/library/books', name: 'api_library_books')]
     public function showAllLibrary(
         LibraryRepository $libraryRepository
     ): Response {
@@ -193,5 +193,5 @@ class ApiController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
-    }
+    }*/
 }
