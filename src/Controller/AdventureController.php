@@ -46,30 +46,14 @@ class AdventureController extends AbstractController
             ->findBy(array('name'=>$room));
         foreach ($Bin as $object) {
             $object->getAll();
-            /**$object->getName();
-            $object->getImg();
-            $object->getRoom();
-            $object->getPlace();
-            $object->getCondition();*/
         }
 
         foreach ($Item as $thing) {
             $thing->getAll();
-            /**$thing->getName();
-            $thing->getImg();
-            $thing->getRoom();
-            $thing->getPlace();
-            $thing->getCondition();*/
         }
 
         foreach ($room as $room) {
             $room->getAll();
-            /**room->getName();
-            $room->getImg();
-            $room->getArrowUp();
-            $room->getArrowDown();
-            $room->getArrowLeft();
-            $room->getArrowRight();*/
         }
 
             return $this->render('adventure/home.html.twig', ['item' =>$Item, 'bin'=>$Bin, 'room'=>$room]);
