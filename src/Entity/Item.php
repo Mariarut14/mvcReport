@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * This file is about class Item,
+ * The class gets and sets values in database table item.
+ *
+ */
+
+
 namespace App\Entity;
 
 use App\Repository\ItemRepository;
@@ -92,6 +99,13 @@ class Item
 
         return $this;
     }
+
+    /**
+     * Gets all values in one Item.
+     * Returns Item.
+     *
+    *@return object $this
+    */
 
     public function getAll(): self
     {

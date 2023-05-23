@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * This file is about class Library,
+ * The class gets and sets values in database table library.
+ *
+ */
+
+
+
 namespace App\Entity;
 
 use App\Repository\LibraryRepository;

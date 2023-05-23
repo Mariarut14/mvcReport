@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * This file is about class Room,
+ * The class gets and sets values in database table room.
+ *
+ */
+
+
 namespace App\Entity;
 
 use App\Repository\RoomRepository;
@@ -107,6 +114,13 @@ class Room
 
         return $this;
     }
+
+    /**
+     * Gets all values in one Room.
+     * Returns Room
+     *
+    *@return object $this
+    */
 
     public function getAll(): self
     {

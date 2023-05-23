@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * This file is about class Bin,
+ * The class gets and sets values in database table bin.
+ *
+ */
+
 namespace App\Entity;
 
 use App\Repository\BinRepository;
@@ -93,6 +99,12 @@ class Bin
         return $this;
     }
 
+     /**
+     * Gets all values in one Bin.
+     * Returns Bin
+     *
+    *@return object $this
+    */
     public function getAll(): self
     {
             $this->getName();
