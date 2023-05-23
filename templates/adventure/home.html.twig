@@ -1,0 +1,42 @@
+{% extends "adventure/base.html.twig" %}
+
+{% block title %}Adventure{% endblock %}
+
+{% block body %}
+
+    <div class="room" style="background-image: url( {{asset('img/'~room.img)}}); background-size:100%;">
+        <div class="item-4-1" style="font-size: 4em">
+            <a href="{{path ('adventure', {room: room.arrowleft}) }}" title={{ room.arrowleft }}>⇐</a>
+        </div>
+        {% if  room.arrowup %}  
+        <div class="item-1-5" style="font-size: 4em">
+            <a href="{{path ('adventure', {room: room.arrowup}) }}" title={{ room.arrowup }}>⇑</a>
+        </div>
+        {% endif %}
+        <div class="item-4-9" style="font-size: 4em">
+            <a href="{{path ('adventure', {room: room.arrowright}) }}" title={{ room.arrowright }}>⇒</a>
+        </div>
+        {% if  room.arrowdown %}  
+        <div  class="item-7-5" style="font-size: 4em">
+            <a href="{{path ('adventure', {room: room.arrowdown}) }}" title={{ room.arrowdown }}>⇓</a>
+        </div>
+        {% endif %}
+
+        {% for thing in item %}
+            <div class="item-{{ thing.place}}">
+                <a href="{{path ('bin_update', { name: thing.name }) }}" >
+                <img  src="{{ asset('img/'~thing.img) }}" width=80px alt="thing.name"></a>
+            </div>
+        {% endfor %}
+        <div class="bin" style="background-image: url( {{asset('img/basket.jpg')}}); background-size:100%;">
+            {% for thing in bin %}
+                <a href="{{path ('item_update', { name: thing.name }) }}" >
+                <img  src="{{ asset('img/'~thing.img) }}" width=40px alt="thing.name"></a>
+            {% endfor %}
+        </div>
+
+
+    </div>
+    {{ include('adventure/flash.html.twig') }}
+
+{% endblock %}

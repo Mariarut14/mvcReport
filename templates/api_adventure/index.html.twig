@@ -1,0 +1,21 @@
+{% extends 'adventure/base.html.twig' %}
+
+{% block title %}Hello ApiAdventureController!{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:1em">JSON-routes:</h1>
+    <form method="post" action="">
+            <p>
+            <input type="submit" name="items" value="See all items"
+                onClick="this.form.action='{{ path('api_project_item') }}';"
+            >
+            <input type="submit" name="bin" value="See all in Bin"
+                onClick="this.form.action='{{ path('api_project_bin') }}';"
+            >
+            <input type="submit" name="rooms" value="See all rooms"
+                onClick="this.form.action='{{ path('api_project_room') }}';"
+            >
+    
+            </p>
+        </form> 
+{% endblock %}

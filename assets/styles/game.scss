@@ -1,0 +1,94 @@
+/* game */
+
+.game-body {
+    background-color: rgb(58, 76, 70);
+    margin: 0px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(137, 181, 168);
+}
+
+/* Title */
+
+.game-site-title {
+    padding: 2em 2em 2em 1em;
+    font-family: 'Acme', sans-serif;
+    font-size: 2em;
+}
+.game-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+    list-style: none;
+}
+
+.game-nav ul li {
+    margin: 1em;
+    padding: 0.5em;
+    background-color: rgb(58, 76, 70);
+    border-radius: 7px;
+    a {
+        color: whitesmoke;
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Mogra&family=Rokkitt&display=swap');
+.game-body {
+    font-family: 'Rokkitt', serif;
+    h1 {
+        font-family: 'Mogra', cursive;
+    }
+}
+
+.game-footer {
+    background-color:  rgb(137, 181, 168);
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    color: $font-alternative-color;
+    min-height: 50px;
+}
+
+.room {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    height: 700px;
+
+    .item {
+            @for $i from 1 through 7 {
+            @for $j from 1 through 9 {
+                &-#{$i}-#{$j} {
+                    grid-column: #{$j} / (#{$j+1});
+                    grid-row: #{$i} / (#{$i+1});
+                    justify-self: center;
+                    align-self: center;
+                    a {
+                        text-decoration: none;
+                        color: white;
+
+                    }          
+                }
+            }
+        }
+       
+    
+    }
+    .bin {
+        justify-self: center;
+        align-self: end;
+        grid-column: 1 / span 2;
+        grid-row: 6 / 8;
+        background-color: rgb(58, 76, 70);
+        min-height: 8em;
+        width: 100%;
+    }    
+}
+

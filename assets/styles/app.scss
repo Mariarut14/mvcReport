@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'typography';
+@import 'body';
 @import 'figure';
 @import 'header';
 @import 'footer';
@@ -8,23 +9,5 @@
 @import 'lucky';
 @import 'card';
 @import 'library';
-
-body {
-    background-color: $background-color;
-    margin: 0px;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-article {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.index {
-    background-color: $background-color;
-    padding: 1em;
-    border-radius: 10px;
-    width: 50%;
-}
+@import 'game';
 
