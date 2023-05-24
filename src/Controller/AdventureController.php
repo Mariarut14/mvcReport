@@ -110,7 +110,7 @@ class AdventureController extends AbstractController
             $ready = !array_diff($ingredients, $binName);
             if ($ready) {
     
-                return $this->render('adventure/ready.html.twig');
+                return $this->redirectToRoute('adventure_ready');
             }
     
 
@@ -193,5 +193,11 @@ class AdventureController extends AbstractController
         $binRepository->remove($bin, true);
     
         return $this->redirectToRoute('adventure', ['room'=>$room]);
+    }
+
+    #[Route('/adventureReady', name: 'adventure_ready')]
+    public function Ready(): Response
+    {
+        return $this->render('adventure/ready.html.twig');
     }
 }

@@ -89,6 +89,22 @@
         background-color: rgb(58, 76, 70);
         min-height: 8em;
         width: 100%;
-    }    
+    }      
 }
 
+.ready {
+    min-height: 600px;
+    margin-top: 0px;
+    h1 {
+        text-align: center;
+        padding: 1em;
+    }
+    figure {
+        img {
+            box-shadow: 3px 3px 2px rgb(119, 119, 119);
+            border-radius: 10px;
+
+        }
+    }
+    
+}

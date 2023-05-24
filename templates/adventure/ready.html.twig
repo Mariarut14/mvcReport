@@ -3,7 +3,12 @@
 {% block title %}Ready{% endblock %}
 
 {% block body %}
-<div class="lucky" style="background-image: url({{asset('img/smiley.jpg')}})">
-    <h1 style="margin-top:1em">Du klarade spelet!</h1>
+<div class="ready" style="background-image: url({{ asset('img/baloons.jpg')}})"; width: 50%;>
+
+    <h1 style="margin-top:0px
+    ">Grattis, du klarade spelet!</h1>
+    <figure class="center">
+        <img src="{{ asset('img/strawberry-cake.jpg')}}" alt="cake" width="300px">
+    </figure>
 </div>
 {% endblock %}
