@@ -16,12 +16,10 @@ use App\Repository\ItemRepository;
 use App\Repository\BinRepository;
 use App\Repository\RoomRepository;
 
-
 class ApiAdventureController extends AbstractController
 {
-    
     #[Route('/api/proj/', name: 'api_project_get', methods:['GET'])]
-    public function Index(): Response
+    public function index(): Response
     {
         return $this->render('api_adventure/index.html.twig');
     }
@@ -29,8 +27,7 @@ class ApiAdventureController extends AbstractController
     #[Route('/api/proj/item', name: 'api_project_item', methods:['POST'])]
     public function getitems(
         ItemRepository $itemRepository
-    ): Response
-    {
+    ): Response {
         $item = $itemRepository
             ->findAll();
         foreach ($item as $thing) {
@@ -40,7 +37,7 @@ class ApiAdventureController extends AbstractController
             $thing->getPlace();
             $thing->getCondition();
         }
-        
+
         $response = $this->json($item);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
@@ -51,8 +48,7 @@ class ApiAdventureController extends AbstractController
     #[Route('/api/proj/bin', name: 'api_project_bin', methods:['POST'])]
     public function getBin(
         BinRepository $binRepository
-    ): Response
-    {
+    ): Response {
         $bin = $binRepository
             ->findAll();
         foreach ($bin as $thing) {
@@ -62,7 +58,7 @@ class ApiAdventureController extends AbstractController
             $thing->getPlace();
             $thing->getCondition();
         }
-        
+
         $response = $this->json($bin);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
@@ -73,8 +69,7 @@ class ApiAdventureController extends AbstractController
     #[Route('/api/proj/room', name: 'api_project_room', methods:['POST'])]
     public function getRooms(
         RoomRepository $roomRepository
-    ): Response
-    {
+    ): Response {
         $room = $roomRepository
             ->findAll();
         foreach ($room as $place) {
@@ -85,7 +80,7 @@ class ApiAdventureController extends AbstractController
             $place->getArrowLeft();
             $place->getArrowRight();
         }
-        
+
         $response = $this->json($room);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
@@ -96,11 +91,10 @@ class ApiAdventureController extends AbstractController
     #[Route('/api/proj/condition', name: 'api_project_condition', methods:['POST'])]
     public function getConditionsNotNull(
         ItemRepository $itemRepository
-    ): Response
-    {
+    ): Response {
         $item = $itemRepository
             ->findAllConditionNotNull();
-        
+
         foreach ($item as $thing) {
             $thing->getName();
             $thing->getImg();
@@ -111,7 +105,7 @@ class ApiAdventureController extends AbstractController
         $data = [
             'item'=>$item
         ];
-        
+
         $response = $this->json($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
@@ -120,16 +114,15 @@ class ApiAdventureController extends AbstractController
     }
     #[Route('api/proj/item_in_room', name: 'api_proj_item_in_room', methods:['POST'])]
     public function show(
-    ItemRepository $itemRepository,
-    Request $request
-
+        ItemRepository $itemRepository,
+        Request $request
     ): Response {
         $room = (string)$request->request->get('room');
 
-        $Item = $itemRepository
+        $item = $itemRepository
             ->findBy(array('room'=>$room));
 
-        foreach ($Item as $thing) {
+        foreach ($item as $thing) {
             $thing->getName();
             $thing->getImg();
             $thing->getRoom();
@@ -137,9 +130,10 @@ class ApiAdventureController extends AbstractController
             $thing->getCondition();
         }
 
-        $response = $this->json($Item);
+        $response = $this->json($item);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
-        return $response;    }
+        return $response;
+    }
 }

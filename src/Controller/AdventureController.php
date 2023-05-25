@@ -17,36 +17,35 @@ use App\Entity\Room;
 class AdventureController extends AbstractController
 {
     #[Route('/proj', name: 'project_get', methods:['GET'])]
-    public function Index(): Response
+    public function index(): Response
     {
         return $this->render('adventure/index.html.twig');
     }
 
     #[Route('/proj', name: 'project_post', methods:['POST'])]
-    public function IndexCallback(): Response
+    public function indexCallback(): Response
     {
         copy('../var/dataCopy.db', '../var/data.db');
-        
+
         return $this->redirectToRoute('adventure', ['room'=>'vardagsrum']);
     }
 
-    
+
     #[Route('/adventure/{room}', name: 'adventure')]
     public function show(
-    ItemRepository $itemRepository,
-    Binrepository $binRepository,
-    RoomRepository $roomRepository,
-    string $room
-
+        ItemRepository $itemRepository,
+        Binrepository $binRepository,
+        RoomRepository $roomRepository,
+        string $room
     ): Response {
-        $Item = $itemRepository
+        $item = $itemRepository
             ->findBy(array('room'=>$room));
-        $Bin = $binRepository
+        $bin = $binRepository
             ->findAll();
         $room = $roomRepository
             ->findBy(array('name'=>$room));
 
-        foreach ($Bin as $object) {
+        foreach ($bin as $object) {
             $object->getName();
             $object->getImg();
             $object->getRoom();
@@ -54,7 +53,7 @@ class AdventureController extends AbstractController
             $object->getCondition();
         }
 
-        foreach ($Item as $thing) {
+        foreach ($item as $thing) {
             $thing->getName();
             $thing->getImg();
             $thing->getRoom();
@@ -71,7 +70,7 @@ class AdventureController extends AbstractController
             $place->getArrowRight();
         }
 
-            return $this->render('adventure/home.html.twig', ['item' =>$Item, 'bin'=>$Bin, 'room'=>$room[0]]);
+        return $this->render('adventure/home.html.twig', ['item' =>$item, 'bin'=>$bin, 'room'=>$room[0]]);
     }
 
 
@@ -86,18 +85,18 @@ class AdventureController extends AbstractController
         $allBin = $binRepository->findAll();
 
         $item = $itemRepository
-            ->findOneBy(['name'=>$name]);   
+            ->findOneBy(['name'=>$name]);
 
         $condition = $item->getCondition();
         $conditionItem = $binRepository->findOneBy(['name'=>$condition]);
-        if ( sizeof($allBin) >= 6 ) {
+        if (sizeof($allBin) >= 6) {
             $this->addFlash(
                 'lose',
                 'Du har för mycket i din korg! Lägg tillbaka något innan 
                 du kan ta mer.'
             );
             return $this->redirectToRoute('adventure', ['room'=> $item->getRoom()]);
-    
+
         }
         if ($conditionItem || $condition =='') {
             $bin = new Bin();
@@ -115,19 +114,19 @@ class AdventureController extends AbstractController
 
 
             $binName = [];
-    
+
             foreach ($allBin as $object) {
-                
+
                 $binName[]=$object->getName();
             }
-        
+
             $ingredients = ['socker', 'mjöl', 'ägg', 'jordgubbar', 'grädde', 'visp'];
             $ready = !array_diff($ingredients, $binName);
             if ($ready) {
-    
+
                 return $this->redirectToRoute('adventure_ready');
             }
-    
+
 
             return $this->redirectToRoute('item_delete', ['name'=>$name]);
         }
@@ -158,12 +157,11 @@ class AdventureController extends AbstractController
         }
 
         $itemRepository->remove($item, true);
-    
+
         return $this->redirectToRoute('adventure', ['room'=>$room]);
     }
     #[Route('/adventure/updateItem/{name}', name: 'item_update')]
     public function updateItem(
-        ItemRepository $itemRepository,
         BinRepository $binRepository,
         string $name,
         ManagerRegistry $doctrine,
@@ -171,8 +169,8 @@ class AdventureController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         $binItem = $binRepository
-            ->findOneBy(['name'=>$name]);        
-        
+            ->findOneBy(['name'=>$name]);
+
         $item = new Item();
 
         $item->setName($binItem->getName());
@@ -206,12 +204,12 @@ class AdventureController extends AbstractController
         }
 
         $binRepository->remove($bin, true);
-    
+
         return $this->redirectToRoute('adventure', ['room'=>$room]);
     }
 
     #[Route('/adventureReady', name: 'adventure_ready')]
-    public function Ready(): Response
+    public function ready(): Response
     {
         return $this->render('adventure/ready.html.twig');
     }

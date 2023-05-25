@@ -39,6 +39,13 @@ class ItemRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+    * Finds all items where condition is not null.
+    * Returns array of items.
+    *
+    * @return array<Item> $item
+    */
+
     public function findAllConditionNotNull(): array
     {
         $qb = $this->createQueryBuilder('i')
