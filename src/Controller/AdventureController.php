@@ -215,4 +215,5 @@ class AdventureController extends AbstractController
     {
         return $this->render('adventure/ready.html.twig');
     }
+
 }

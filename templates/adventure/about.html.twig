@@ -1,0 +1,25 @@
+{% extends 'adventure/base.html.twig' %}
+
+{% block title %}About projekt{% endblock %}
+
+{% block body %}
+<div class="books" >
+
+<article class="index">
+<h1>Projekt äventyrsspel</h1>
+
+<p>Jag har valt att göra ett äventyrsspel som heter "Baka en tårta". Spelet går 
+ut på att samla på sig saker i fyra olika rum. Det finns saker man behöver och 
+sådant man inte behöver. Vissa saker kräver att du redan har en viss sak, ett villkor 
+för att du ska kunna ta saken. Du kan max ha 6 saker, så du kommer behöva lägga ifrån dig 
+grejer altt eftersom. När du har samlat på dig rätt ingredienser för att kunna göra 
+en tårta är spelet klart</p>
+<p>Jag har använt en SQLite databas i spelet där sakerna och rummen finns i tre tabeller:
+ Item, Bin och Room.</p>
+<p>Det finns även Json-utskrifter från spelet att titta på.</p>
+
+<a href="{{path('project_about_database')}}">About database</a>
+
+</article>
+</div>
+{% endblock %}

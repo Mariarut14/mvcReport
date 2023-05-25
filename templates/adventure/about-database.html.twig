@@ -1,0 +1,43 @@
+{% extends 'adventure/base.html.twig' %}
+
+{% block title %}About database{% endblock %}
+
+{% block body %}
+<div class="books" >
+
+<article class="index">
+<h1>Om databasen till äventyrsspelet "Baka en tårta"</h1>
+<img src="{{asset('img/er.jpg')}}" width=300px alt="er-diagram" >
+<p>Jag har använt mig av SQLite-databas. Databasen består av tre tabeller; 'item', 'bin' och 'room'.</p>
+<ul>
+    <li>Item innehåller alla saker som kan "plockas" i rummen. Varje sak har ett name, 
+    img (bildnamn), room (vilket rum saken ska vara i), place (vilken plats i rummet saken 
+    befinner sig på) och condition (villkor för att få ta saken). Vissa av sakerna har inget
+    villkor.</li>
+    <li>Bin är en tom tabell från början och fylls på under tiden spelet går. Det är i Bin 
+    de saker som plockas hamnar och det går även att plocka bort saker från Bin.</li>
+    <li>Room är tabellen som innehåller de fyra rummen som används i spelet. Varje rum har ett name,
+    img, arrow-up (adress där man hamnar om man klickar på uppåt-pilen), arrow-down, arrow-left 
+    och arrow-right. Vissa arrows är tomma eftersom man inte kan gå åt alla håll i alla rum.</li> 
+</ul>
+<p>Room-tabellen innehåller samma room som finns angivet i bin och item. Ett room kan tillhöra 
+flera item-objekt eller bin-objekt, men varje item/bin tillhör bara ett rum. Det finns även en kopia av 
+databasen som används när spelet börjar om så att databasen innehåller rätt objekt från början.</p>
+<p>Fördelen med att arbeta med ORM är bland annat att det inte behövs lika mycket kod, eller rättare 
+sagt att mycket kod skapas automatiskt som till exempel entity-filerna och repository. Det blir då ganska enkelt 
+att använda funktioner som "findAll" för att hämta ett visst objekt från databasen. Funktionerna hör ihop 
+med enhetsklasserna så det är extra användbart vid objektorienterad programmering. Man behöver inte 
+heller kunna ett visst databas-språk, utan kan använda samma programmeringsspråk som till 
+all annan kod.</p>
+<p>Nackdelen tycker jag är att det kändes som att jag förstod mer vad jag gjorde när vi arbetade mer direkt 
+med databasen. Det var mer grundläggande och inte så mycket som händer "bakom" koden som inte syns. Det krävs 
+även en del installerande av program innan man är redo och enligt mig krångligare om man ska göra mer 
+avancerade queries. Fast det kanske är för att jag inte arbetat så mycket med det.</p>
+<p>Det finns förstås många likheter ändå. Det är samma tänk med CRUD, och att man kan söka efter objekt 
+som har ett visst värde. Relationerna mellan tabeller fungerar också på liknande sätt och även om 
+jag inte provat det i våra projekt så kan man "joina" tabeller i båda systemen och det är viktigt att 
+tänka på vad som är primary key. I båda systemen behöver du också vara noga med vilken datatyp du har 
+i dina tabeller.</p>
+</article>
+</div>
+{% endblock %}

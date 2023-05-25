@@ -60,4 +60,17 @@ class ReportControllerTwig extends AbstractController
         return $this->render('metrics.html.twig');
     }
 
+    #[Route('/proj/about', name: 'project_about')]
+    public function aboutProject(): Response
+    {
+        return $this->render('adventure/about.html.twig');
+    }
+
+    #[Route('/proj/about/database', name: 'project_about_database')]
+    public function aboutDatabase(): Response
+    {
+        return $this->render('adventure/about-database.html.twig');
+    }
+
+
 }
