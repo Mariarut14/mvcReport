@@ -50,8 +50,9 @@
 
 .game-footer {
     background-color:  rgb(137, 181, 168);
+    background-image: linear-gradient(rgb(137, 181, 168),rgb(58, 76, 70), rgb(58, 76, 70),rgb(137, 181, 168));
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 1em;
     color: $font-alternative-color;
     min-height: 50px;
@@ -146,10 +147,13 @@
     display: none;
 }
 #myButton {
-    background-color: rgb(119, 119, 119);
+    background-color: $background-alternative-color;
     float: right;
     margin-bottom: 10px;
     padding: 10px 20px;
+    border-radius: 3px;
+    box-shadow: rgb(62, 62, 62) 3px 3px;
+    color: whitesmoke;
 }
 .popup-content {
     background-color: white;

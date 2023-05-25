@@ -3,14 +3,18 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+<article class="article">
     <h1>Presentation av mig själv</h1>
     <p>Hej!</p>
-    <p>Jag heter Karl Karlsson och går den här kursen.
+    <p>Jag heter Karl Karlsson och går kursen Webbprogrammering och databser på BTH.
     Jag är 43 år och bor med min katt i Malmö. Jag arbetar som frilansande journalist
      i vanliga fall, men just nu är jag alltså tjänstledig för 
      att lära mig webbprogrammering.</p>
      <p>På fritiden åker jag 
      gärna till något kallt ställe och kör snowboard. Men jag 
      gillar även att bara hänga med katten och ta det lugnt.</p>
-     <img src="{{ asset('img/me.jpg') }}" width=500px alt="snowborder" >
+     <figure class="center" >
+        <img src="{{ asset('img/me.jpg') }}" width=400px alt="snowborder" style="border-radius: 10px; box-shadow: rgb(62, 62, 62) 3px 3px;">
+    </figure>
+</article>
 {% endblock %}

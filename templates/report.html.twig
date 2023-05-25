@@ -164,7 +164,53 @@
         även verktyg som hjälper till att hitta felaktigheter i koden och till och med ger tips om 
         förbättringar.</p>
         <h2 id="kmom10">kmom10</h2> 
-        <p></p>
+        <p>Krav 1-3</p>
+        <p>Jag har valt att göra ett äventyrsspel där målet är att samla ingredienser för att 
+        kunna baka en tårta. Jag använder tre tabeller i en SQLite databas (item, bin och room)och har 
+        alltså tre klasser. Själva spelet består av en template där bakgrundsbild och vilka extra saker 
+        som ska finnas i rummet bestäms av vilka parametrar som skickas med av controllern. Det finns en 
+        korg där spelaren samlar på sig saker som kan behövas, och när rätt saker finns i korgen är spelet klart. 
+        Det går även att plocka ut saker ur korgen. De hamnar då tillbaka till sin "vanliga" plats. När 
+        saker flyttas mellan rum och korg sker alltså en förflyttning mellan två tabeller, item och bin. 
+        Rummet är uppdelat i ett grid (9x7) så att det finns goda möjligheter att variera var extra-sakerna 
+        ska placeras ut.</p>
+        <p>När det gäller layouten har jag ändrat färgsättningen till att vara i olika nyanser av grönt.
+        Det är även en annan stil på fonterna, en lite mer informell stil på rubrikerna. I headern ser navigeringen 
+        annorlunda ut med "knappar" i annan färg och footern har fått gradering i färgen.</p>
+        <p>Jag har en readme-fil som beskriver det som finns under repot "Report". Där finns även information 
+        om att jag använt PHP pch Symfony och vilka versioner. För att man ska kunna klona repot har jag med 
+        en länk till mitt git-repo och beskrivning av hur man går tillväga. Avslutningsvis finns där även 
+        länkar till badges  i Scrutinizer. Förutom kodtäckning får jag bra värden. Eftersom jag inte har 
+        enhetstester på varken controllers eller databaser så blir det en väldigt liten andel av koden som blir 
+        testad.</p>
+        <p>Krav 4</p>
+        <p>Jag har skapat en JSON API med 5 olika router. De första tre visar allt innehåll i respektive tabell. 
+        Sedan finns även en route där det listas vilka saker som har ett villkor. I den sista routern kan man välja 
+        ett rum och sedan visas alla saker som hör till det rummet. Tanken är även att man under spelets gång ska kunna 
+        gå till API-sidan och därför finns även en länk tillbaka till spelet. API-routerna lade jag i en ny controller, 
+        ApiAdventureController.</p>
+        <p>Krav 5</p>
+        <p>Som jag tidigare nämnt använde jag mig av en SQLite databas i spelet. Det kändes smidigt att använda SQLite 
+        eftersom jag då kunde ha den i en fil. Genom att ha en tabell för sakerna som ligger i rummen (tabell "item") 
+        och en för de som lagts i korgen (tabell "bin") blev det enkelt att hantera flyttandet av sakerna. Jag kunde även 
+        koppla en bild, ett rum och en plats (och villkor på vissa) till varje sak på ett smidigt sett. I room-tabellen 
+        kopplade jag rum till pilarna som navigerade mellan rummen. Allt detta gjorde att jag sedan bara behövde ha 
+        en template och sedan skickade routern med data om vilken bild som skulle vara bakgrund, var pilarna skulle länka 
+        till och vilka saker som var kopplade till just det rummet. Korgen med sina hämtade saker syns i alla rum. I 
+        början när jag planerade spelet tänkte jag först att jag skulle använda sessioner för att ha ordning på vilka saker 
+        som "plockats", men det skulle ha blivit mycket data att lägga in och hämta. </p>
+        <p>Jag skapade en kopia av databasen som används när databasen återskapas i början av varje nytt spel genom att 
+        kopian kopieras till databs-filen. I början är item-tabellen full och bin-tabellen tom. På sidan proj/about/database 
+        har jag ett ER-diagram och har beskrivit lite mer om databasen.</p>
+        <p>Krav 6</p>
+        <p>En del som jag är nöjd med och som jag tycker är lite extra, är hur jag arbetade med villkor. Genom att lägga 
+        till ett attribut "condition" på vissa saker gjorde jag spelet lite mer avancerat. Man behöver t.ex. ha hämtat en 
+        sax för att kunna få tag i jordgubbarna eller ha en lampa för att kunna se (och hämta) saker 
+        i skafferiet. Jag lade då även till flashmeddelanden som berättar vad som saknas för att kunna hämta just den saken.</p>
+        <p>Jag tycker också att jag lyckats bra med att skapa en "popup"-fusklapp på startsidan till spelet.</p>
+        <p>Det sista jag vill lyfta som är lite extra är att jag använder en rullista på JSON-sidan när man ska välja vilket 
+        rum man vill se saker ifrån. Jag skulle ha kunnat haft fyra olika länkar, men tyckte att det vore smidigare att kunna 
+        välja på det sättet. Jag använder sedan Request i routern för att ta emot vilket rum användaren vill se saker ifrån.</p>
     </article>
     <aside class="aside">
         <ul>
