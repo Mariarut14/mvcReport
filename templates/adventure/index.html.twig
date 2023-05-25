@@ -21,6 +21,41 @@
 <form method="post" action=''>
     <input type="submit" name="do_it" value="Starta spelet!">
 </form>
+<button id="myButton">
+    Fusklapp
+</button>
+<div id="myPopup" class="popup">
+    <div class="popup-content">
+        <h1 >
+            Fusklapp!
+        </h1>
+        <p>1. Ta lampan i vardagsrummet.</p>
+        <p>2. Gå till skafferiet och ta socker, mjöl och sax.</p>
+        <p>3. Klicka på lampan så att den försvinner.</p>
+        <p>4. Gå till trädgården, hämta stegen och ta ägg och jordgubbar.</p>
+        <p>5. Lämna tillbaka stege och sax.</p>
+        <p>6. Gå till köket, ta vispen och grädden.</p>
+        <h1>Klar!</h1>
+        <button id="closePopup">
+            Stäng
+        </button>
+    </div>
+</div>
+
+<script>
+    myButton.addEventListener("click", function () {
+        myPopup.classList.add("show");
+    });
+    closePopup.addEventListener("click", function () {
+        myPopup.classList.remove("show");
+    });
+    window.addEventListener("click", function (event) {
+        if (event.target == myPopup) {
+            myPopup.classList.remove("show");
+        }
+    });
+</script>
+
 </article>
 </div>
 {% endblock %}
