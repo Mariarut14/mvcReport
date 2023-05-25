@@ -10,5 +10,8 @@
     <figure class="center">
         <img src="{{ asset('img/strawberry-cake.jpg')}}" alt="cake" width="300px">
     </figure>
+    <form method="get" action='{{ path( 'project_get')}}'>
+        <input type="submit" name="do_it" value="Gå till startsidan!">
+    </form>
 </div>
 {% endblock %}

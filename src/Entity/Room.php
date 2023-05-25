@@ -114,23 +114,4 @@ class Room
 
         return $this;
     }
-
-    /**
-     * Gets all values in one Room.
-     * Returns Room
-     *
-    *@return object $this
-    */
-
-    public function getAll(): self
-    {
-        $this->getName();
-        $this->getImg();
-        $this->getArrowUp();
-        $this->getArrowDown();
-        $this->getArrowLeft();
-        $this->getArrowRight();
-        
-        return $this;
-    }
 }

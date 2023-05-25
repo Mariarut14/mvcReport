@@ -39,6 +39,17 @@ class ItemRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllConditionNotNull(): array
+    {
+        $qb = $this->createQueryBuilder('i')
+            ->where("i.condition != ''");
+
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
+
 //    /**
 //     * @return Item[] Returns an array of Item objects
 //     */

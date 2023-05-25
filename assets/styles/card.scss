@@ -87,7 +87,8 @@
     border-color: #f5c6cb;
 }
 
-input[type=submit] {
+input[type=submit],
+select {
     background-color: $background-alternative-color;
     border: none;
     color: white;

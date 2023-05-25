@@ -100,21 +100,4 @@ class Item
         return $this;
     }
 
-    /**
-     * Gets all values in one Item.
-     * Returns Item.
-     *
-    *@return object $this
-    */
-
-    public function getAll(): self
-    {
-            $this->getName();
-            $this->getImg();
-            $this->getRoom();
-            $this->getPlace();
-            $this->getCondition();
-
-        return $this;
-    }
 }

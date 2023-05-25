@@ -3,19 +3,32 @@
 {% block title %}Hello ApiAdventureController!{% endblock %}
 
 {% block body %}
+<div class="api">
     <h1 style="margin-top:1em">JSON-routes:</h1>
     <form method="post" action="">
             <p>
             <input type="submit" name="items" value="See all items"
                 onClick="this.form.action='{{ path('api_project_item') }}';"
-            >
+            ><br>
             <input type="submit" name="bin" value="See all in Bin"
                 onClick="this.form.action='{{ path('api_project_bin') }}';"
-            >
+            ><br>
             <input type="submit" name="rooms" value="See all rooms"
                 onClick="this.form.action='{{ path('api_project_room') }}';"
-            >
-    
+            ><br>
+            <input type="submit" name="conditions" value="Items with conditions"
+                onClick="this.form.action='{{ path('api_project_condition') }}';"
+            ><br>
+            <input type="submit" name="room" value="See items from one room"
+                onClick="this.form.action='{{ path('api_proj_item_in_room') }}';">
+            <select name="room" id="room">
+                <option value="vardagsrum">vardagsrum</option>
+                <option value="skafferi">skafferi</option>
+                <option value="trädgård">trädgård</option>
+                <option value="kök">kök</option>
+            </select>    
             </p>
         </form> 
+        <a href="{{path('adventure',{room: 'vardagsrum'})}}">Back to current game</a>
+</div>
 {% endblock %}

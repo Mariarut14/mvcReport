@@ -99,20 +99,4 @@ class Bin
         return $this;
     }
 
-     /**
-     * Gets all values in one Bin.
-     * Returns Bin
-     *
-    *@return object $this
-    */
-    public function getAll(): self
-    {
-            $this->getName();
-            $this->getImg();
-            $this->getRoom();
-            $this->getPlace();
-            $this->getCondition();
-
-        return $this;
-    }
 }

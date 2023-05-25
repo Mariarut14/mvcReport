@@ -19,6 +19,7 @@
     padding: 2em 2em 2em 1em;
     font-family: 'Acme', sans-serif;
     font-size: 2em;
+    color: $font-alternative-color;
 }
 .game-nav ul {
     display: flex;
@@ -41,7 +42,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Mogra&family=Rokkitt&display=swap');
 .game-body {
     font-family: 'Rokkitt', serif;
-    h1 {
+    h1,
+    h6 {
         font-family: 'Mogra', cursive;
     }
 }
@@ -106,5 +108,28 @@
 
         }
     }
-    
+    form {
+        text-align: center;
+        background-color: rgb(119, 119, 119);
+    }  
+}
+
+.api {
+    padding: 1em;
+    min-height: 600px;
+    color: $font-alternative-color;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    a {
+        color:$font-alternative-color;
+    }
+    form input,
+    select {
+        background-color: rgb(119, 119, 119);
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: dotted rgb(58, 76, 70);
+        margin: 1em;
+    }
 }

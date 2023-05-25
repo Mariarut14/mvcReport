@@ -12,6 +12,7 @@ use App\Repository\BinRepository;
 use App\Repository\RoomRepository;
 use App\Entity\Bin;
 use App\Entity\Item;
+use App\Entity\Room;
 
 class AdventureController extends AbstractController
 {
@@ -44,19 +45,33 @@ class AdventureController extends AbstractController
             ->findAll();
         $room = $roomRepository
             ->findBy(array('name'=>$room));
+
         foreach ($Bin as $object) {
-            $object->getAll();
+            $object->getName();
+            $object->getImg();
+            $object->getRoom();
+            $object->getPlace();
+            $object->getCondition();
         }
 
         foreach ($Item as $thing) {
-            $thing->getAll();
+            $thing->getName();
+            $thing->getImg();
+            $thing->getRoom();
+            $thing->getPlace();
+            $thing->getCondition();
         }
 
-        foreach ($room as $room) {
-            $room->getAll();
+        foreach ($room as $place) {
+            $place->getName();
+            $place->getImg();
+            $place->getArrowUp();
+            $place->getArrowDown();
+            $place->getArrowLeft();
+            $place->getArrowRight();
         }
 
-            return $this->render('adventure/home.html.twig', ['item' =>$Item, 'bin'=>$Bin, 'room'=>$room]);
+            return $this->render('adventure/home.html.twig', ['item' =>$Item, 'bin'=>$Bin, 'room'=>$room[0]]);
     }
 
 
