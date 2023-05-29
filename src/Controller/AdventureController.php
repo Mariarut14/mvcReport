@@ -120,7 +120,7 @@ class AdventureController extends AbstractController
                 $binName[]=$object->getName();
             }
 
-            $ingredients = ['socker', 'mjöl', 'ägg', 'jordgubbar', 'grädde', 'visp'];
+            $ingredients = ['socker', 'mjöl', 'ägg', 'jordgubbar', 'grädde'];
             $ready = !array_diff($ingredients, $binName);
             if ($ready) {
 
@@ -132,7 +132,7 @@ class AdventureController extends AbstractController
         }
 
         $this->addFlash(
-            'win',
+            'lose',
             'Det saknas '. $condition . ' i din korg för att du ska kunna
             ta ' . $name . '. Börja om!'
         );
